@@ -98,10 +98,10 @@
 			children = (
 				1B37787F2BA42ED10037B375 /* Auth0.plist */,
 				1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */,
-				1BD6DB572BA2490500E42988 /* Screens */,
 				1BD6DB0D2BA23A5F00E42988 /* ContentView.swift */,
 				1BD6DB1C2BA23FBF00E42988 /* AppDelegate.swift */,
 				1BD6DB1E2BA23FCD00E42988 /* SceneDelegate.swift */,
+				1BD6DB572BA2490500E42988 /* Screens */,
 				1BD6DB202BA2400900E42988 /* Models */,
 				1BD6DB252BA2403A00E42988 /* Views */,
 				1BD6DB322BA240A600E42988 /* ViewModels */,

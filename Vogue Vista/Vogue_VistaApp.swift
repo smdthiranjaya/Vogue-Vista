@@ -11,7 +11,8 @@ import SwiftUI
 struct Vogue_VistaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
     }
 }
+

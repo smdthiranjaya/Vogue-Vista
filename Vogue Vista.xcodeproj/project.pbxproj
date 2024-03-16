@@ -7,19 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B3778802BA42ED20037B375 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B37787F2BA42ED10037B375 /* Auth0.plist */; };
+		1B3778822BA433E20037B375 /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3778812BA433E20037B375 /* home.swift */; };
 		1BD6DB0C2BA23A5F00E42988 /* Vogue_VistaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */; };
 		1BD6DB0E2BA23A5F00E42988 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0D2BA23A5F00E42988 /* ContentView.swift */; };
 		1BD6DB102BA23A6100E42988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0F2BA23A6100E42988 /* Assets.xcassets */; };
 		1BD6DB142BA23A6100E42988 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD6DB132BA23A6100E42988 /* Preview Assets.xcassets */; };
+		1BD6DB1D2BA23FBF00E42988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB1C2BA23FBF00E42988 /* AppDelegate.swift */; };
+		1BD6DB1F2BA23FCD00E42988 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB1E2BA23FCD00E42988 /* SceneDelegate.swift */; };
+		1BD6DB222BA2401900E42988 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB212BA2401900E42988 /* Product.swift */; };
+		1BD6DB242BA2402900E42988 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB232BA2402900E42988 /* User.swift */; };
+		1BD6DB2B2BA2407600E42988 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB2A2BA2407600E42988 /* ProductListView.swift */; };
+		1BD6DB2D2BA2408400E42988 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB2C2BA2408400E42988 /* ProductDetailView.swift */; };
+		1BD6DB2F2BA2408E00E42988 /* ShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB2E2BA2408E00E42988 /* ShoppingCartView.swift */; };
+		1BD6DB312BA2409700E42988 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB302BA2409700E42988 /* CheckoutView.swift */; };
+		1BD6DB342BA240BE00E42988 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB332BA240BE00E42988 /* ProductListViewModel.swift */; };
+		1BD6DB362BA240D100E42988 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB352BA240D100E42988 /* ProductDetailViewModel.swift */; };
+		1BD6DB382BA240DC00E42988 /* ShoppingCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB372BA240DC00E42988 /* ShoppingCartViewModel.swift */; };
+		1BD6DB3A2BA240E500E42988 /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB392BA240E500E42988 /* CheckoutViewModel.swift */; };
+		1BD6DB3D2BA2410600E42988 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB3C2BA2410600E42988 /* NetworkService.swift */; };
+		1BD6DB3F2BA2411100E42988 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB3E2BA2411100E42988 /* AuthService.swift */; };
+		1BD6DB412BA2411800E42988 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB402BA2411800E42988 /* ProductService.swift */; };
+		1BD6DB442BA2412C00E42988 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB432BA2412C00E42988 /* Constants.swift */; };
+		1BD6DB462BA2413600E42988 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB452BA2413600E42988 /* Extensions.swift */; };
+		1BD6DB492BA2416900E42988 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BD6DB482BA2416900E42988 /* Localizable.strings */; };
+		1BD6DB502BA2460B00E42988 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 1BD6DB4F2BA2460B00E42988 /* Auth0 */; };
+		1BD6DB592BA2491500E42988 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB582BA2491500E42988 /* login.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B37787F2BA42ED10037B375 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		1B3778812BA433E20037B375 /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
 		1BD6DB082BA23A5F00E42988 /* Vogue Vista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vogue Vista.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vogue_VistaApp.swift; sourceTree = "<group>"; };
 		1BD6DB0D2BA23A5F00E42988 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1BD6DB0F2BA23A6100E42988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BD6DB112BA23A6100E42988 /* Vogue_Vista.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vogue_Vista.entitlements; sourceTree = "<group>"; };
 		1BD6DB132BA23A6100E42988 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1BD6DB1C2BA23FBF00E42988 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1BD6DB1E2BA23FCD00E42988 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1BD6DB212BA2401900E42988 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		1BD6DB232BA2402900E42988 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1BD6DB2A2BA2407600E42988 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
+		1BD6DB2C2BA2408400E42988 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		1BD6DB2E2BA2408E00E42988 /* ShoppingCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartView.swift; sourceTree = "<group>"; };
+		1BD6DB302BA2409700E42988 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		1BD6DB332BA240BE00E42988 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		1BD6DB352BA240D100E42988 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		1BD6DB372BA240DC00E42988 /* ShoppingCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewModel.swift; sourceTree = "<group>"; };
+		1BD6DB392BA240E500E42988 /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
+		1BD6DB3C2BA2410600E42988 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1BD6DB3E2BA2411100E42988 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		1BD6DB402BA2411800E42988 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		1BD6DB432BA2412C00E42988 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1BD6DB452BA2413600E42988 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1BD6DB482BA2416900E42988 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		1BD6DB582BA2491500E42988 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD6DB502BA2460B00E42988 /* Auth0 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +96,18 @@
 		1BD6DB0A2BA23A5F00E42988 /* Vogue Vista */ = {
 			isa = PBXGroup;
 			children = (
+				1B37787F2BA42ED10037B375 /* Auth0.plist */,
 				1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */,
+				1BD6DB572BA2490500E42988 /* Screens */,
 				1BD6DB0D2BA23A5F00E42988 /* ContentView.swift */,
+				1BD6DB1C2BA23FBF00E42988 /* AppDelegate.swift */,
+				1BD6DB1E2BA23FCD00E42988 /* SceneDelegate.swift */,
+				1BD6DB202BA2400900E42988 /* Models */,
+				1BD6DB252BA2403A00E42988 /* Views */,
+				1BD6DB322BA240A600E42988 /* ViewModels */,
+				1BD6DB3B2BA240EB00E42988 /* Services */,
+				1BD6DB422BA2412300E42988 /* Utilities */,
+				1BD6DB472BA2414300E42988 /* Resources */,
 				1BD6DB0F2BA23A6100E42988 /* Assets.xcassets */,
 				1BD6DB112BA23A6100E42988 /* Vogue_Vista.entitlements */,
 				1BD6DB122BA23A6100E42988 /* Preview Content */,
@@ -67,6 +121,73 @@
 				1BD6DB132BA23A6100E42988 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1BD6DB202BA2400900E42988 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1BD6DB212BA2401900E42988 /* Product.swift */,
+				1BD6DB232BA2402900E42988 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1BD6DB252BA2403A00E42988 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1BD6DB2A2BA2407600E42988 /* ProductListView.swift */,
+				1BD6DB2C2BA2408400E42988 /* ProductDetailView.swift */,
+				1BD6DB2E2BA2408E00E42988 /* ShoppingCartView.swift */,
+				1BD6DB302BA2409700E42988 /* CheckoutView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1BD6DB322BA240A600E42988 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1BD6DB332BA240BE00E42988 /* ProductListViewModel.swift */,
+				1BD6DB352BA240D100E42988 /* ProductDetailViewModel.swift */,
+				1BD6DB372BA240DC00E42988 /* ShoppingCartViewModel.swift */,
+				1BD6DB392BA240E500E42988 /* CheckoutViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1BD6DB3B2BA240EB00E42988 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1BD6DB3C2BA2410600E42988 /* NetworkService.swift */,
+				1BD6DB3E2BA2411100E42988 /* AuthService.swift */,
+				1BD6DB402BA2411800E42988 /* ProductService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1BD6DB422BA2412300E42988 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1BD6DB432BA2412C00E42988 /* Constants.swift */,
+				1BD6DB452BA2413600E42988 /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		1BD6DB472BA2414300E42988 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1BD6DB482BA2416900E42988 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1BD6DB572BA2490500E42988 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1BD6DB582BA2491500E42988 /* login.swift */,
+				1B3778812BA433E20037B375 /* home.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +206,9 @@
 			dependencies = (
 			);
 			name = "Vogue Vista";
+			packageProductDependencies = (
+				1BD6DB4F2BA2460B00E42988 /* Auth0 */,
+			);
 			productName = "Vogue Vista";
 			productReference = 1BD6DB082BA23A5F00E42988 /* Vogue Vista.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +237,9 @@
 				Base,
 			);
 			mainGroup = 1BD6DAFF2BA23A5F00E42988;
+			packageReferences = (
+				1BD6DB4E2BA2460A00E42988 /* XCRemoteSwiftPackageReference "Auth0.swift" */,
+			);
 			productRefGroup = 1BD6DB092BA23A5F00E42988 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,7 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BD6DB142BA23A6100E42988 /* Preview Assets.xcassets in Resources */,
+				1BD6DB492BA2416900E42988 /* Localizable.strings in Resources */,
 				1BD6DB102BA23A6100E42988 /* Assets.xcassets in Resources */,
+				1B3778802BA42ED20037B375 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +268,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD6DB1F2BA23FCD00E42988 /* SceneDelegate.swift in Sources */,
+				1BD6DB1D2BA23FBF00E42988 /* AppDelegate.swift in Sources */,
+				1BD6DB2D2BA2408400E42988 /* ProductDetailView.swift in Sources */,
+				1BD6DB3D2BA2410600E42988 /* NetworkService.swift in Sources */,
+				1BD6DB382BA240DC00E42988 /* ShoppingCartViewModel.swift in Sources */,
+				1BD6DB3F2BA2411100E42988 /* AuthService.swift in Sources */,
+				1BD6DB2B2BA2407600E42988 /* ProductListView.swift in Sources */,
+				1BD6DB462BA2413600E42988 /* Extensions.swift in Sources */,
+				1BD6DB412BA2411800E42988 /* ProductService.swift in Sources */,
+				1B3778822BA433E20037B375 /* home.swift in Sources */,
 				1BD6DB0E2BA23A5F00E42988 /* ContentView.swift in Sources */,
+				1BD6DB442BA2412C00E42988 /* Constants.swift in Sources */,
+				1BD6DB312BA2409700E42988 /* CheckoutView.swift in Sources */,
+				1BD6DB362BA240D100E42988 /* ProductDetailViewModel.swift in Sources */,
 				1BD6DB0C2BA23A5F00E42988 /* Vogue_VistaApp.swift in Sources */,
+				1BD6DB342BA240BE00E42988 /* ProductListViewModel.swift in Sources */,
+				1BD6DB222BA2401900E42988 /* Product.swift in Sources */,
+				1BD6DB3A2BA240E500E42988 /* CheckoutViewModel.swift in Sources */,
+				1BD6DB2F2BA2408E00E42988 /* ShoppingCartView.swift in Sources */,
+				1BD6DB592BA2491500E42988 /* login.swift in Sources */,
+				1BD6DB242BA2402900E42988 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +422,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Vogue-Vista-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -312,6 +461,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Vogue-Vista-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -359,6 +509,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1BD6DB4E2BA2460A00E42988 /* XCRemoteSwiftPackageReference "Auth0.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/Auth0.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1BD6DB4F2BA2460B00E42988 /* Auth0 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BD6DB4E2BA2460A00E42988 /* XCRemoteSwiftPackageReference "Auth0.swift" */;
+			productName = Auth0;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1BD6DB002BA23A5F00E42988 /* Project object */;
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B3778802BA42ED20037B375 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B37787F2BA42ED10037B375 /* Auth0.plist */; };
+		1B3778822BA433E20037B375 /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3778812BA433E20037B375 /* home.swift */; };
 		1BD6DB0C2BA23A5F00E42988 /* Vogue_VistaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */; };
 		1BD6DB0E2BA23A5F00E42988 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0D2BA23A5F00E42988 /* ContentView.swift */; };
 		1BD6DB102BA23A6100E42988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0F2BA23A6100E42988 /* Assets.xcassets */; };
@@ -31,10 +33,11 @@
 		1BD6DB492BA2416900E42988 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BD6DB482BA2416900E42988 /* Localizable.strings */; };
 		1BD6DB502BA2460B00E42988 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 1BD6DB4F2BA2460B00E42988 /* Auth0 */; };
 		1BD6DB592BA2491500E42988 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB582BA2491500E42988 /* login.swift */; };
-		1BD6DB5D2BA2503900E42988 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BD6DB5C2BA2503900E42988 /* Auth0.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B37787F2BA42ED10037B375 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		1B3778812BA433E20037B375 /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
 		1BD6DB082BA23A5F00E42988 /* Vogue Vista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vogue Vista.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vogue_VistaApp.swift; sourceTree = "<group>"; };
 		1BD6DB0D2BA23A5F00E42988 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,7 +63,6 @@
 		1BD6DB452BA2413600E42988 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1BD6DB482BA2416900E42988 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1BD6DB582BA2491500E42988 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
-		1BD6DB5C2BA2503900E42988 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +96,7 @@
 		1BD6DB0A2BA23A5F00E42988 /* Vogue Vista */ = {
 			isa = PBXGroup;
 			children = (
-				1BD6DB5C2BA2503900E42988 /* Auth0.plist */,
+				1B37787F2BA42ED10037B375 /* Auth0.plist */,
 				1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */,
 				1BD6DB572BA2490500E42988 /* Screens */,
 				1BD6DB0D2BA23A5F00E42988 /* ContentView.swift */,
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				1BD6DB582BA2491500E42988 /* login.swift */,
+				1B3778812BA433E20037B375 /* home.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -254,7 +257,7 @@
 				1BD6DB142BA23A6100E42988 /* Preview Assets.xcassets in Resources */,
 				1BD6DB492BA2416900E42988 /* Localizable.strings in Resources */,
 				1BD6DB102BA23A6100E42988 /* Assets.xcassets in Resources */,
-				1BD6DB5D2BA2503900E42988 /* Auth0.plist in Resources */,
+				1B3778802BA42ED20037B375 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +277,7 @@
 				1BD6DB2B2BA2407600E42988 /* ProductListView.swift in Sources */,
 				1BD6DB462BA2413600E42988 /* Extensions.swift in Sources */,
 				1BD6DB412BA2411800E42988 /* ProductService.swift in Sources */,
+				1B3778822BA433E20037B375 /* home.swift in Sources */,
 				1BD6DB0E2BA23A5F00E42988 /* ContentView.swift in Sources */,
 				1BD6DB442BA2412C00E42988 /* Constants.swift in Sources */,
 				1BD6DB312BA2409700E42988 /* CheckoutView.swift in Sources */,

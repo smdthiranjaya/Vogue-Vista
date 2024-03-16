@@ -15,3 +15,4 @@ struct Vogue_VistaApp: App {
         }
     }
 }
+

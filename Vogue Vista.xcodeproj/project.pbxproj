@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B1D29A52BA85BD7003A5AC6 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 1B1D29A42BA85BD7003A5AC6 /* Auth */; };
+		1B1D29A72BA85BD7003A5AC6 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 1B1D29A62BA85BD7003A5AC6 /* Functions */; };
+		1B1D29A92BA85BD7003A5AC6 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 1B1D29A82BA85BD7003A5AC6 /* PostgREST */; };
+		1B1D29AB2BA85BD7003A5AC6 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 1B1D29AA2BA85BD7003A5AC6 /* Realtime */; };
+		1B1D29AD2BA85BD7003A5AC6 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 1B1D29AC2BA85BD7003A5AC6 /* Storage */; };
+		1B1D29AF2BA85D04003A5AC6 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 1B1D29AE2BA85D04003A5AC6 /* Auth */; };
+		1B1D29B12BA85D04003A5AC6 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 1B1D29B02BA85D04003A5AC6 /* Functions */; };
+		1B1D29B32BA85D04003A5AC6 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 1B1D29B22BA85D04003A5AC6 /* PostgREST */; };
+		1B1D29B52BA85D04003A5AC6 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 1B1D29B42BA85D04003A5AC6 /* Realtime */; };
+		1B1D29B72BA85D04003A5AC6 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 1B1D29B62BA85D04003A5AC6 /* Storage */; };
 		1B3778802BA42ED20037B375 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B37787F2BA42ED10037B375 /* Auth0.plist */; };
 		1B3778822BA433E20037B375 /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3778812BA433E20037B375 /* home.swift */; };
 		1BD6DB0C2BA23A5F00E42988 /* Vogue_VistaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */; };
@@ -38,6 +48,7 @@
 /* Begin PBXFileReference section */
 		1B37787F2BA42ED10037B375 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		1B3778812BA433E20037B375 /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
+		1BAF56DF2BA704A500122510 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		1BD6DB082BA23A5F00E42988 /* Vogue Vista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vogue Vista.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vogue_VistaApp.swift; sourceTree = "<group>"; };
 		1BD6DB0D2BA23A5F00E42988 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +81,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B1D29AD2BA85BD7003A5AC6 /* Storage in Frameworks */,
+				1B1D29A92BA85BD7003A5AC6 /* PostgREST in Frameworks */,
+				1B1D29B72BA85D04003A5AC6 /* Storage in Frameworks */,
+				1B1D29B12BA85D04003A5AC6 /* Functions in Frameworks */,
+				1B1D29B52BA85D04003A5AC6 /* Realtime in Frameworks */,
+				1B1D29B32BA85D04003A5AC6 /* PostgREST in Frameworks */,
+				1B1D29A72BA85BD7003A5AC6 /* Functions in Frameworks */,
+				1B1D29AF2BA85D04003A5AC6 /* Auth in Frameworks */,
+				1B1D29A52BA85BD7003A5AC6 /* Auth in Frameworks */,
+				1B1D29AB2BA85BD7003A5AC6 /* Realtime in Frameworks */,
 				1BD6DB502BA2460B00E42988 /* Auth0 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +101,7 @@
 		1BD6DAFF2BA23A5F00E42988 = {
 			isa = PBXGroup;
 			children = (
+				1BAF56DF2BA704A500122510 /* Empty.swift */,
 				1BD6DB0A2BA23A5F00E42988 /* Vogue Vista */,
 				1BD6DB092BA23A5F00E42988 /* Products */,
 			);
@@ -208,6 +230,16 @@
 			name = "Vogue Vista";
 			packageProductDependencies = (
 				1BD6DB4F2BA2460B00E42988 /* Auth0 */,
+				1B1D29A42BA85BD7003A5AC6 /* Auth */,
+				1B1D29A62BA85BD7003A5AC6 /* Functions */,
+				1B1D29A82BA85BD7003A5AC6 /* PostgREST */,
+				1B1D29AA2BA85BD7003A5AC6 /* Realtime */,
+				1B1D29AC2BA85BD7003A5AC6 /* Storage */,
+				1B1D29AE2BA85D04003A5AC6 /* Auth */,
+				1B1D29B02BA85D04003A5AC6 /* Functions */,
+				1B1D29B22BA85D04003A5AC6 /* PostgREST */,
+				1B1D29B42BA85D04003A5AC6 /* Realtime */,
+				1B1D29B62BA85D04003A5AC6 /* Storage */,
 			);
 			productName = "Vogue Vista";
 			productReference = 1BD6DB082BA23A5F00E42988 /* Vogue Vista.app */;
@@ -239,6 +271,7 @@
 			mainGroup = 1BD6DAFF2BA23A5F00E42988;
 			packageReferences = (
 				1BD6DB4E2BA2460A00E42988 /* XCRemoteSwiftPackageReference "Auth0.swift" */,
+				1B1D29A32BA85BD7003A5AC6 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			productRefGroup = 1BD6DB092BA23A5F00E42988 /* Products */;
 			projectDirPath = "";
@@ -511,6 +544,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1B1D29A32BA85BD7003A5AC6 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
 		1BD6DB4E2BA2460A00E42988 /* XCRemoteSwiftPackageReference "Auth0.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/auth0/Auth0.swift.git";
@@ -522,6 +563,51 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1B1D29A42BA85BD7003A5AC6 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B1D29A32BA85BD7003A5AC6 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		1B1D29A62BA85BD7003A5AC6 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B1D29A32BA85BD7003A5AC6 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		1B1D29A82BA85BD7003A5AC6 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B1D29A32BA85BD7003A5AC6 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		1B1D29AA2BA85BD7003A5AC6 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B1D29A32BA85BD7003A5AC6 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		1B1D29AC2BA85BD7003A5AC6 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B1D29A32BA85BD7003A5AC6 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		1B1D29AE2BA85D04003A5AC6 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Auth;
+		};
+		1B1D29B02BA85D04003A5AC6 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Functions;
+		};
+		1B1D29B22BA85D04003A5AC6 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PostgREST;
+		};
+		1B1D29B42BA85D04003A5AC6 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Realtime;
+		};
+		1B1D29B62BA85D04003A5AC6 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Storage;
+		};
 		1BD6DB4F2BA2460B00E42988 /* Auth0 */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1BD6DB4E2BA2460A00E42988 /* XCRemoteSwiftPackageReference "Auth0.swift" */;

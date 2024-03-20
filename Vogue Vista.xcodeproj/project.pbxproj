@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B1D29BD2BA9BBB0003A5AC6 /* StartupPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29BC2BA9BBB0003A5AC6 /* StartupPageViewController.swift */; };
+		1B1D29BF2BA9BBD2003A5AC6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29BE2BA9BBD2003A5AC6 /* SignUpViewController.swift */; };
+		1B1D29C12BA9BC06003A5AC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29C02BA9BC06003A5AC6 /* LoginViewController.swift */; };
+		1B1D29C32BA9BE73003A5AC6 /* UIViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29C22BA9BE72003A5AC6 /* UIViewControllerRepresentable.swift */; };
+		1B1D29C62BA9E167003A5AC6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29C42BA9C04D003A5AC6 /* File.swift */; };
 		1B3778802BA42ED20037B375 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B37787F2BA42ED10037B375 /* Auth0.plist */; };
 		1B3778822BA433E20037B375 /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3778812BA433E20037B375 /* home.swift */; };
 		1BD6DB0C2BA23A5F00E42988 /* Vogue_VistaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */; };
-		1BD6DB0E2BA23A5F00E42988 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0D2BA23A5F00E42988 /* ContentView.swift */; };
 		1BD6DB102BA23A6100E42988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0F2BA23A6100E42988 /* Assets.xcassets */; };
 		1BD6DB142BA23A6100E42988 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD6DB132BA23A6100E42988 /* Preview Assets.xcassets */; };
 		1BD6DB1D2BA23FBF00E42988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB1C2BA23FBF00E42988 /* AppDelegate.swift */; };
 		1BD6DB1F2BA23FCD00E42988 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB1E2BA23FCD00E42988 /* SceneDelegate.swift */; };
 		1BD6DB222BA2401900E42988 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB212BA2401900E42988 /* Product.swift */; };
-		1BD6DB242BA2402900E42988 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB232BA2402900E42988 /* User.swift */; };
+		1BD6DB242BA2402900E42988 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB232BA2402900E42988 /* UsersModel.swift */; };
 		1BD6DB2B2BA2407600E42988 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB2A2BA2407600E42988 /* ProductListView.swift */; };
 		1BD6DB2D2BA2408400E42988 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB2C2BA2408400E42988 /* ProductDetailView.swift */; };
 		1BD6DB2F2BA2408E00E42988 /* ShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB2E2BA2408E00E42988 /* ShoppingCartView.swift */; };
@@ -32,22 +36,25 @@
 		1BD6DB462BA2413600E42988 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB452BA2413600E42988 /* Extensions.swift */; };
 		1BD6DB492BA2416900E42988 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BD6DB482BA2416900E42988 /* Localizable.strings */; };
 		1BD6DB502BA2460B00E42988 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 1BD6DB4F2BA2460B00E42988 /* Auth0 */; };
-		1BD6DB592BA2491500E42988 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB582BA2491500E42988 /* login.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B1D29BC2BA9BBB0003A5AC6 /* StartupPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupPageViewController.swift; sourceTree = "<group>"; };
+		1B1D29BE2BA9BBD2003A5AC6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1B1D29C02BA9BC06003A5AC6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1B1D29C22BA9BE72003A5AC6 /* UIViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		1B1D29C42BA9C04D003A5AC6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		1B37787F2BA42ED10037B375 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		1B3778812BA433E20037B375 /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
 		1BD6DB082BA23A5F00E42988 /* Vogue Vista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vogue Vista.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vogue_VistaApp.swift; sourceTree = "<group>"; };
-		1BD6DB0D2BA23A5F00E42988 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1BD6DB0F2BA23A6100E42988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BD6DB112BA23A6100E42988 /* Vogue_Vista.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vogue_Vista.entitlements; sourceTree = "<group>"; };
 		1BD6DB132BA23A6100E42988 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1BD6DB1C2BA23FBF00E42988 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BD6DB1E2BA23FCD00E42988 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1BD6DB212BA2401900E42988 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		1BD6DB232BA2402900E42988 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1BD6DB232BA2402900E42988 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		1BD6DB2A2BA2407600E42988 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		1BD6DB2C2BA2408400E42988 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		1BD6DB2E2BA2408E00E42988 /* ShoppingCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartView.swift; sourceTree = "<group>"; };
@@ -62,7 +69,6 @@
 		1BD6DB432BA2412C00E42988 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1BD6DB452BA2413600E42988 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1BD6DB482BA2416900E42988 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		1BD6DB582BA2491500E42988 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +83,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B1D29C52BA9E15D003A5AC6 /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				1BD6DB1E2BA23FCD00E42988 /* SceneDelegate.swift */,
+				1BD6DB1C2BA23FBF00E42988 /* AppDelegate.swift */,
+				1B1D29C42BA9C04D003A5AC6 /* File.swift */,
+			);
+			path = Backup;
+			sourceTree = "<group>";
+		};
 		1BD6DAFF2BA23A5F00E42988 = {
 			isa = PBXGroup;
 			children = (
+				1B1D29C52BA9E15D003A5AC6 /* Backup */,
 				1BD6DB0A2BA23A5F00E42988 /* Vogue Vista */,
 				1BD6DB092BA23A5F00E42988 /* Products */,
 			);
@@ -98,9 +115,8 @@
 			children = (
 				1B37787F2BA42ED10037B375 /* Auth0.plist */,
 				1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */,
-				1BD6DB0D2BA23A5F00E42988 /* ContentView.swift */,
-				1BD6DB1C2BA23FBF00E42988 /* AppDelegate.swift */,
-				1BD6DB1E2BA23FCD00E42988 /* SceneDelegate.swift */,
+				1B1D29C22BA9BE72003A5AC6 /* UIViewControllerRepresentable.swift */,
+				1B1D29BC2BA9BBB0003A5AC6 /* StartupPageViewController.swift */,
 				1BD6DB572BA2490500E42988 /* Screens */,
 				1BD6DB202BA2400900E42988 /* Models */,
 				1BD6DB252BA2403A00E42988 /* Views */,
@@ -127,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				1BD6DB212BA2401900E42988 /* Product.swift */,
-				1BD6DB232BA2402900E42988 /* User.swift */,
+				1BD6DB232BA2402900E42988 /* UsersModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,7 +200,8 @@
 		1BD6DB572BA2490500E42988 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				1BD6DB582BA2491500E42988 /* login.swift */,
+				1B1D29BE2BA9BBD2003A5AC6 /* SignUpViewController.swift */,
+				1B1D29C02BA9BC06003A5AC6 /* LoginViewController.swift */,
 				1B3778812BA433E20037B375 /* home.swift */,
 			);
 			path = Screens;
@@ -268,17 +285,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B1D29C62BA9E167003A5AC6 /* File.swift in Sources */,
 				1BD6DB1F2BA23FCD00E42988 /* SceneDelegate.swift in Sources */,
 				1BD6DB1D2BA23FBF00E42988 /* AppDelegate.swift in Sources */,
 				1BD6DB2D2BA2408400E42988 /* ProductDetailView.swift in Sources */,
 				1BD6DB3D2BA2410600E42988 /* NetworkService.swift in Sources */,
 				1BD6DB382BA240DC00E42988 /* ShoppingCartViewModel.swift in Sources */,
 				1BD6DB3F2BA2411100E42988 /* AuthService.swift in Sources */,
+				1B1D29BF2BA9BBD2003A5AC6 /* SignUpViewController.swift in Sources */,
 				1BD6DB2B2BA2407600E42988 /* ProductListView.swift in Sources */,
+				1B1D29BD2BA9BBB0003A5AC6 /* StartupPageViewController.swift in Sources */,
 				1BD6DB462BA2413600E42988 /* Extensions.swift in Sources */,
 				1BD6DB412BA2411800E42988 /* ProductService.swift in Sources */,
 				1B3778822BA433E20037B375 /* home.swift in Sources */,
-				1BD6DB0E2BA23A5F00E42988 /* ContentView.swift in Sources */,
+				1B1D29C12BA9BC06003A5AC6 /* LoginViewController.swift in Sources */,
 				1BD6DB442BA2412C00E42988 /* Constants.swift in Sources */,
 				1BD6DB312BA2409700E42988 /* CheckoutView.swift in Sources */,
 				1BD6DB362BA240D100E42988 /* ProductDetailViewModel.swift in Sources */,
@@ -287,8 +307,8 @@
 				1BD6DB222BA2401900E42988 /* Product.swift in Sources */,
 				1BD6DB3A2BA240E500E42988 /* CheckoutViewModel.swift in Sources */,
 				1BD6DB2F2BA2408E00E42988 /* ShoppingCartView.swift in Sources */,
-				1BD6DB592BA2491500E42988 /* login.swift in Sources */,
-				1BD6DB242BA2402900E42988 /* User.swift in Sources */,
+				1BD6DB242BA2402900E42988 /* UsersModel.swift in Sources */,
+				1B1D29C32BA9BE73003A5AC6 /* UIViewControllerRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

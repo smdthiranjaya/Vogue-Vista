@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
                     // Login was successful
                     UserDefaults.standard.set(loginResponse.token, forKey: "userToken")
                     self?.showAlert(with: "Login Success", message: "You're now logged in!")
-                    // self?.switchToHomeView()
+                    self?.switchToHomeView()
                 } else {
                     // Handle unexpected error
                     self?.showAlert(with: "Login Error", message: "An unknown error occurred.")
@@ -79,7 +79,6 @@ class LoginViewController: UIViewController {
     private func showAlert(with title: String, message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
-            self.switchToHomeView()
             completion?() // Call the completion handler if it exists
         })
         present(alert, animated: true)

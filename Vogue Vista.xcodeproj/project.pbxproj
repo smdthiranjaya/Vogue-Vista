@@ -12,7 +12,6 @@
 		1B1D29C12BA9BC06003A5AC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29C02BA9BC06003A5AC6 /* LoginViewController.swift */; };
 		1B1D29C32BA9BE73003A5AC6 /* UIViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29C22BA9BE72003A5AC6 /* UIViewControllerRepresentable.swift */; };
 		1B1D29C62BA9E167003A5AC6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29C42BA9C04D003A5AC6 /* File.swift */; };
-		1B3778802BA42ED20037B375 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B37787F2BA42ED10037B375 /* Auth0.plist */; };
 		1B3778822BA433E20037B375 /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3778812BA433E20037B375 /* home.swift */; };
 		1BD6DB0C2BA23A5F00E42988 /* Vogue_VistaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */; };
 		1BD6DB102BA23A6100E42988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0F2BA23A6100E42988 /* Assets.xcassets */; };
@@ -44,7 +43,6 @@
 		1B1D29C02BA9BC06003A5AC6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1B1D29C22BA9BE72003A5AC6 /* UIViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		1B1D29C42BA9C04D003A5AC6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		1B37787F2BA42ED10037B375 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		1B3778812BA433E20037B375 /* home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
 		1BD6DB082BA23A5F00E42988 /* Vogue Vista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vogue Vista.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vogue_VistaApp.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 		1BD6DB0A2BA23A5F00E42988 /* Vogue Vista */ = {
 			isa = PBXGroup;
 			children = (
-				1B37787F2BA42ED10037B375 /* Auth0.plist */,
 				1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */,
 				1B1D29C22BA9BE72003A5AC6 /* UIViewControllerRepresentable.swift */,
 				1B1D29BC2BA9BBB0003A5AC6 /* StartupPageViewController.swift */,
@@ -274,7 +271,6 @@
 				1BD6DB142BA23A6100E42988 /* Preview Assets.xcassets in Resources */,
 				1BD6DB492BA2416900E42988 /* Localizable.strings in Resources */,
 				1BD6DB102BA23A6100E42988 /* Assets.xcassets in Resources */,
-				1B3778802BA42ED20037B375 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@ struct HomeView: View {
                             loadProducts()
                         }
                     List(products) { product in
-                        NavigationLink(destination: ProductDetailView(product: product)) {
+                        NavigationLink(destination: ProductDetailView(products: [product])) {
                             HStack {
                                 AsyncImage(url: URL(string: product.imageUrl)) { image in
                                     image.resizable()

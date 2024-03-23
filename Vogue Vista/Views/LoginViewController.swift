@@ -65,7 +65,10 @@ class LoginViewController: UIViewController {
                     self?.showAlert(with: "Login Error", message: "Failed to log in: \(error.localizedDescription)")
                 } else if let loginResponse = loginResponse {
                     // Login was successful
+                    // Inside your login success block
+                    UserDefaults.standard.set(loginResponse.userId, forKey: "userId")
                     UserDefaults.standard.set(loginResponse.token, forKey: "userToken")
+
                     self?.showAlert(with: "Login Success", message: "You're now logged in!")
                     self?.switchToHomeView()
                 } else {

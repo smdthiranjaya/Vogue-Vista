@@ -7,7 +7,8 @@ struct User: Codable {
 }
 
 struct LoginResponse: Codable {
-    var token: String
+    let token: String
+    let userId: Int
 }
 
 class UsersModel {

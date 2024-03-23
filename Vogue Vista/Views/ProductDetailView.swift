@@ -1,13 +1,19 @@
+
 import SwiftUI
 
 struct ProductDetailView: View {
-    var products: [Product] // Assume this contains all variations of a product
+    var products: [Product]
     @State private var selectedColor: String
     @State private var selectedSize: String
     @State private var selectedProduct: Product?
     @State private var quantity: Int = 1
+    @State private var showingAddToCartAlert = false
+    @State private var addToCartMessage = ""
+    @State private var navigateToCart = false
     
-    // Unique colors and sizes for the picker
+    // Instantiate CartManager
+    private let cartManager = CartManager()
+
     private var colors: [String] {
         Set(products.map { $0.color }).sorted()
     }
@@ -18,10 +24,10 @@ struct ProductDetailView: View {
 
     init(products: [Product]) {
         self.products = products
-        // Initialize with the first available color and size
         _selectedColor = State(initialValue: products.first?.color ?? "")
         _selectedSize = State(initialValue: products.first?.size ?? "")
         _selectedProduct = State(initialValue: products.first)
+        
     }
 
     var body: some View {
@@ -73,18 +79,44 @@ struct ProductDetailView: View {
                         .font(.headline)
                 }
 
+                
                 Button("Add to Cart") {
-                    // Handle adding to cart here
+                    // Inside the Button("Add to Cart") action
+                    guard let product = selectedProduct,
+                          let price = Double(product.price) else { return }
+//                   let userId = userIdF
+                    addToCart(userId: userId, productId: product.id, color: selectedColor, size: selectedSize, quantity: quantity, price: price)
+
+                }
+            
+                .alert(isPresented: $showingAddToCartAlert) {
+                    Alert(title: Text("Cart Update"), message: Text(addToCartMessage), dismissButton: .default(Text("OK")))
                 }
                 .buttonStyle(.borderedProminent)
                 .padding()
             }
             .padding()
+            NavigationLink(destination: ShoppingCartView(), isActive: $navigateToCart) { EmptyView() }
         }
         .navigationBarTitle(Text(selectedProduct?.name ?? ""), displayMode: .inline)
+        .navigationBarItems(trailing: Button(action: {
+            self.navigateToCart = true
+        }) {
+            Image(systemName: "cart") // Use a cart icon. Make sure this name matches your icon file name or system image name.
+        })
     }
 
     private func selectProduct() {
         selectedProduct = products.first { $0.color == selectedColor && $0.size == selectedSize }
     }
+    
+    private func addToCart(userId: Int, productId: Int, color: String, size: String, quantity: Int, price: Double) {
+        cartManager.addToCart(userId: userId, productId: productId, color: color, size: size, quantity: quantity, price: price) { success, message in
+            DispatchQueue.main.async {
+                self.addToCartMessage = message
+                self.showingAddToCartAlert = true
+            }
+        }
+    }
+    
 }

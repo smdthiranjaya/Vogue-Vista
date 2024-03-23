@@ -70,6 +70,7 @@ struct HomeView: View {
                     message: Text("Are you sure you want to log out?"),
                     primaryButton: .destructive(Text("Yes")) {
                         UserDefaults.standard.removeObject(forKey: "userToken")
+                        UserDefaults.standard.removeObject(forKey: "userId")
                         navigateToLogin = true
                     },
                     secondaryButton: .cancel()

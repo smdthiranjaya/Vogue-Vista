@@ -1,9 +1,9 @@
 import Foundation
 
 class CartManager {
-    let baseURL = "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com" // Replace with your actual base URL
+    let baseURL = "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com" 
     
-    func addToCart(userId: Int, productId: Int, color: String, size: String, quantity: Int, price: Double, completion: @escaping (Bool, String) -> Void) {
+    func addToCart(userId: Int, productId: Int, color: String, size: String, quantity: Int, price: Double, name: String , imageUrl: String, completion: @escaping (Bool, String) -> Void) {
         guard let url = URL(string: "\(baseURL)/cart/add") else {
             completion(false, "Invalid URL")
             return
@@ -15,7 +15,9 @@ class CartManager {
             "color": color,
             "size": size,
             "quantity": quantity,
-            "price": price
+            "price": price,
+            "name": name,
+            "imageUrl": imageUrl
         ]
         
         var request = URLRequest(url: url)

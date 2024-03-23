@@ -10,8 +10,7 @@ struct ProductDetailView: View {
     @State private var showingAddToCartAlert = false
     @State private var addToCartMessage = ""
     @State private var navigateToCart = false
-    
-    // Instantiate CartManager
+
     private let cartManager = CartManager()
 
     private var colors: [String] {
@@ -81,13 +80,16 @@ struct ProductDetailView: View {
 
                 
                 Button("Add to Cart") {
-                    // Inside the Button("Add to Cart") action
-                    guard let product = selectedProduct,
-                          let price = Double(product.price) else { return }
-//                   let userId = userIdF
-                    addToCart(userId: userId, productId: product.id, color: selectedColor, size: selectedSize, quantity: quantity, price: price)
-
+                    if let userId = UserDefaults.standard.object(forKey: "userId") as? Int {
+                        guard let product = selectedProduct,
+                              let price = Double(product.price) else { return }
+                        addToCart(userId: userId, productId: product.id, color: selectedColor, size: selectedSize, quantity: quantity, price: price, name: product.name, imageUrl: product.imageUrl)
+                    } else {
+                        self.addToCartMessage = "Please login to add items to cart."
+                        self.showingAddToCartAlert = true
+                    }
                 }
+
             
                 .alert(isPresented: $showingAddToCartAlert) {
                     Alert(title: Text("Cart Update"), message: Text(addToCartMessage), dismissButton: .default(Text("OK")))
@@ -102,7 +104,7 @@ struct ProductDetailView: View {
         .navigationBarItems(trailing: Button(action: {
             self.navigateToCart = true
         }) {
-            Image(systemName: "cart") // Use a cart icon. Make sure this name matches your icon file name or system image name.
+            Image(systemName: "cart")
         })
     }
 
@@ -110,8 +112,8 @@ struct ProductDetailView: View {
         selectedProduct = products.first { $0.color == selectedColor && $0.size == selectedSize }
     }
     
-    private func addToCart(userId: Int, productId: Int, color: String, size: String, quantity: Int, price: Double) {
-        cartManager.addToCart(userId: userId, productId: productId, color: color, size: size, quantity: quantity, price: price) { success, message in
+    private func addToCart(userId: Int, productId: Int, color: String, size: String, quantity: Int, price: Double, name: String, imageUrl: String) {
+        cartManager.addToCart(userId: userId, productId: productId, color: color, size: size, quantity: quantity, price: price, name: name, imageUrl: imageUrl) { success, message in
             DispatchQueue.main.async {
                 self.addToCartMessage = message
                 self.showingAddToCartAlert = true

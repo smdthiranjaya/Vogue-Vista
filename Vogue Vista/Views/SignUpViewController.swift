@@ -71,11 +71,9 @@ class SignUpViewController: UIViewController {
         usersModel.registerUser(email: email, password: password, name: name) { [weak self] success, error in
             DispatchQueue.main.async {
                 if success {
-                    // Handle success
                     self?.showAlert(with: "Success", message: "You have successfully registered.")
                     
                 } else if let error = error {
-                    // Handle error
                     self?.showAlert(with: "Registration Error", message: error.localizedDescription)
                 }
             }
@@ -91,7 +89,7 @@ class SignUpViewController: UIViewController {
             } else {
                 self.present(loginVC, animated: true, completion: nil)
             }
-            completion?() // Call the completion handler if it exists
+            completion?()
         })
         present(alert, animated: true)
     }

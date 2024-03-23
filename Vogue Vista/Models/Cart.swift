@@ -1,6 +1,8 @@
 import Foundation
 
-struct Cart: Codable, Identifiable {
+struct Cart: Codable {
     let id: Int
-    var items: [CartItem]
+    let user_id: Int
+    let created_at: String
+    let items: [CartItem]
 }

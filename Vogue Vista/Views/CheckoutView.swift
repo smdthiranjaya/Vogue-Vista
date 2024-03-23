@@ -1,8 +1,20 @@
-//
-//  CheckoutView.swift
-//  Vogue Vista
-//
-//  Created by SMD Thiranjaya on BE 2567-03-14.
-//
+import SwiftUI
 
-import Foundation
+struct CheckoutView: View {
+    @ObservedObject var checkoutViewModel: CheckoutViewModel
+    
+    var body: some View {
+        VStack {
+            Button(action: {
+                checkoutViewModel.checkoutCart()
+            }) {
+                Text("Checkout")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(8)
+            }
+        }
+        .padding()
+        .navigationBarHidden(true)    }
+}

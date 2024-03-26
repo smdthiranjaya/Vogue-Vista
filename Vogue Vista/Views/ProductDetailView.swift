@@ -88,7 +88,11 @@ struct ProductDetailView: View {
                         self.addToCartMessage = "Please login to add items to cart."
                         self.showingAddToCartAlert = true
                     }
-                }
+                }.frame(minWidth: 0, maxWidth: .infinity)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(40)
 
             
                 .alert(isPresented: $showingAddToCartAlert) {

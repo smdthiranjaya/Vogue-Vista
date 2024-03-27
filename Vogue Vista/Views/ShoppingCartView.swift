@@ -1,9 +1,9 @@
+
 import SwiftUI
 
 struct ShoppingCartView: View {
     @ObservedObject var viewModel = ShoppingCartViewModel()
-    // Initialize the CheckoutViewModel for passing to CheckoutView
-    let checkoutViewModel = CheckoutViewModel()
+    @State private var showingCheckout = false
 
     var body: some View {
         NavigationView {
@@ -47,7 +47,7 @@ struct ShoppingCartView: View {
                     
                 }
                 HStack {
-                    Text("Total: ")
+                    Text("Subtotal: ")
                         .font(.headline)
                     Spacer()
                 
@@ -58,18 +58,22 @@ struct ShoppingCartView: View {
                 }
                 .padding()
                 
-                // Checkout button - navigates to CheckoutView
-                NavigationLink(destination: CheckoutView(checkoutViewModel: checkoutViewModel)) {
-                    Text("Checkout")
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(40)
+                Button("Checkout") {
+                    // This triggers the modal presentation
+                    showingCheckout = true
                 }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding()
+                .foregroundColor(.white)
+                .background(AppColor.appPrimary)
+                .cornerRadius(40)
                 .padding()
             }
             .navigationBarTitle("Shopping Cart", displayMode: .inline)
+            .sheet(isPresented: $showingCheckout) {
+                // Assuming CheckoutView initialization with necessary parameters
+                CheckoutView(checkoutViewModel: CheckoutViewModel(totalAmount: Double(viewModel.totalPrice) ?? 0.0))
+            }
         }
         .onAppear {
             viewModel.fetchCart()

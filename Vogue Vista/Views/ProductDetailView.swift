@@ -67,7 +67,7 @@ struct ProductDetailView: View {
                         Text("\(count)").tag(count)
                     }
                 }
-                .pickerStyle(.wheel)
+                .pickerStyle(.segmented)
                 
                 .onChange(of: selectedSize) { newValue in
                     selectProduct()
@@ -91,14 +91,13 @@ struct ProductDetailView: View {
                 }.frame(minWidth: 0, maxWidth: .infinity)
                     .padding()
                     .foregroundColor(.white)
-                    .background(Color.blue)
+                    .background(AppColor.appPrimary)
                     .cornerRadius(40)
 
             
                 .alert(isPresented: $showingAddToCartAlert) {
                     Alert(title: Text("Cart Update"), message: Text(addToCartMessage), dismissButton: .default(Text("OK")))
                 }
-                .buttonStyle(.borderedProminent)
                 .padding()
             }
             .padding()

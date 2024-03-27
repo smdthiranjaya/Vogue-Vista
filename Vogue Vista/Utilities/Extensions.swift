@@ -1,8 +1,6 @@
-//
-//  Extensions.swift
-//  Vogue Vista
-//
-//  Created by SMD Thiranjaya on BE 2567-03-14.
-//
 
-import Foundation
+import SwiftUI
+
+enum AppColor {
+    static let appPrimary = Color(red: 38 / 255, green: 34 / 255, blue: 97 / 255)
+}

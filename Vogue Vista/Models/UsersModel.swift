@@ -22,7 +22,6 @@ class UsersModel {
         let body = ["email": email, "password": password, "name": name]
         guard let httpBody = try? JSONEncoder().encode(body) else { return }
         request.httpBody = httpBody
-        
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(false, error)
@@ -40,7 +39,6 @@ class UsersModel {
         let body = ["email": email, "password": password]
         guard let httpBody = try? JSONEncoder().encode(body) else { return }
         request.httpBody = httpBody
-        
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(nil, error)
@@ -51,6 +49,7 @@ class UsersModel {
                 return
             }
             completion(loginResponse, nil)
+            
         }.resume()
     }
 }

@@ -73,11 +73,15 @@ struct ProductDetailView: View {
                     selectProduct()
                 }
 
-                if let price = selectedProduct?.price {
-                    Text("Price: \(price)")
-                        .font(.headline)
-                }
 
+                HStack {
+                    if let price = selectedProduct?.price {
+                        Text("Price: \(price)")
+                            .font(.headline)
+                            .bold()
+                    }
+                    
+                }
                 
                 Button("Add to Cart") {
                     if let userId = UserDefaults.standard.object(forKey: "userId") as? Int {
@@ -88,17 +92,20 @@ struct ProductDetailView: View {
                         self.addToCartMessage = "Please login to add items to cart."
                         self.showingAddToCartAlert = true
                     }
-                }.frame(minWidth: 0, maxWidth: .infinity)
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(AppColor.appPrimary)
-                    .cornerRadius(40)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding()
+                .foregroundColor(.white)
+                .background(AppColor.appPrimary)
+                .cornerRadius(10)
 
             
                 .alert(isPresented: $showingAddToCartAlert) {
                     Alert(title: Text("Cart Update"), message: Text(addToCartMessage), dismissButton: .default(Text("OK")))
                 }
                 .padding()
+            
+                
             }
             .padding()
             NavigationLink(destination: ShoppingCartView(), isActive: $navigateToCart) { EmptyView() }

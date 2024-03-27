@@ -46,6 +46,7 @@ struct ShoppingCartView: View {
                     }
                     
                 }
+                
                 HStack {
                     Text("Subtotal: ")
                         .font(.headline)
@@ -66,7 +67,7 @@ struct ShoppingCartView: View {
                 .padding()
                 .foregroundColor(.white)
                 .background(AppColor.appPrimary)
-                .cornerRadius(40)
+                .cornerRadius(10)
                 .padding()
             }
             .navigationBarTitle("Shopping Cart", displayMode: .inline)

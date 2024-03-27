@@ -5,6 +5,9 @@ struct HomeView: View {
     @State private var products: [Product] = []
     @State private var showingAlert = false
     @State private var navigateToLogin = false
+    @State private var navigateToProfile = false
+    
+
     
     var body: some View {
         NavigationView {
@@ -15,7 +18,7 @@ struct HomeView: View {
                         .padding(7)
                         .background(Color(.systemGray6))
                         .cornerRadius(8)
-                        .padding(.horizontal)
+                        .padding(.top, 20)
                         .onSubmit {
                         
                             loadProducts()
@@ -52,7 +55,8 @@ struct HomeView: View {
             .navigationBarItems(
                 leading: HStack {
                     Button(action: {
-                        print("Profile icon tapped")
+                        // Trigger navigation to Profile
+                        self.navigateToProfile = true
                     }) {
                         Image(systemName: "person.crop.circle")
                             .imageScale(.large)
@@ -78,7 +82,11 @@ struct HomeView: View {
             }
             .fullScreenCover(isPresented: $navigateToLogin) {
                 StartupPageViewRepresentable()
-            }
+            }            .background(
+                NavigationLink(destination: ProfileView(), isActive: $navigateToProfile) {
+                    EmptyView()
+                }
+            )
             .onAppear(perform: loadProducts)
         }
     }

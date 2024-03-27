@@ -13,23 +13,28 @@ struct CheckoutView: View {
     @State private var promoCode: String = ""
     
     var body: some View {
-        VStack {
-            Text("Checkout")
-                .font(.title)
-                .bold()
-                .padding(.top, 20)
+//        VStack {
+//            Text("Checkout")
+//                .font(.title)
+//                .bold()
+//                .padding(.top, 20)
                 
-            Image("checkoutProcessImage")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 90, height: 90)
+//            Image("checkoutProcessImage")
+//                .resizable()
+//                .scaledToFit()
+//                .frame(width: 90, height: 90)
             
             ScrollView {
                 VStack(alignment: .leading, spacing: 15) {
+                                Text("Checkout")
+                                    .font(.title)
+                                    .bold()
+                                    .padding(.top, 20)
+                    
                     TextField("Address", text: $address)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.top, 5)
-                        .iconPrefix(systemName: "house.fill")
+                        .iconPrefix(systemName: "location.fill")
                     
                     TextField("Card Number", text: $cardNumber)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -43,26 +48,33 @@ struct CheckoutView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .iconPrefix(systemName: "lock.fill")
                     
-                    FeeRowView(title: "Total Fee", icon: "cart.fill", amount: checkoutViewModel.totalAmount)
+                    PromoCodeEntryField(promoCode: $promoCode)
+                    
+                    FeeRowView(title: "Subtotal", icon: "cart.fill", amount: checkoutViewModel.totalAmount)
                     FeeRowView(title: "Delivery Fee", icon: "bicycle", amount: deliveryFee)
                     FeeRowView(title: "Service Fee", icon: "wrench.and.screwdriver.fill", amount: serviceFee)
                     
                     TotalView(totalAmount: checkoutViewModel.totalAmount + deliveryFee + serviceFee)
                     
-                    PromoCodeEntryField(promoCode: $promoCode)
                     
-                    Button("Place Order") {
-                        if validateInputs() {
-                            placeOrder()
-                        }
-                    }
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(validateInputs() ? AppColor.appPrimary : AppColor.appPrimary.opacity(0.1))
-                    .cornerRadius(40)
-                    .padding()
+                    Text("By completing your purchase, you agree to our payment terms: All sales are final, payments are processed securely, and personal data is handled in accordance with our privacy policy. For support, please contact customer service.")
+                        .font(.caption2)
+                        .padding(.top, 20)
+                    
+
                 }
+                .padding()
+                
+                Button("Place Order") {
+                    if validateInputs() {
+                        placeOrder()
+                    }
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding()
+                .foregroundColor(.white)
+                .background(validateInputs() ? AppColor.appPrimary : AppColor.appPrimary.opacity(0.1))
+                .cornerRadius(10)
                 .padding()
             }
             .padding()
@@ -71,7 +83,7 @@ struct CheckoutView: View {
             .overlay(
                 showingPopup ? PopupMessageView(showingPopup: $showingPopup) : nil
             )
-        }}
+        }
     
     private func validateInputs() -> Bool {
         return !address.isEmpty && !cardNumber.isEmpty && !expiryDate.isEmpty && !cvv.isEmpty
@@ -156,11 +168,11 @@ struct PopupMessageView: View {
         VStack {
             Image(systemName: "checkmark.circle.fill")
                 .resizable()
-                .frame(width: 60, height: 60)
+                .frame(width: 100, height: 100)
                 .foregroundColor(.green)
                 .scaleEffect(isAnimating ? 1.1 : 1.0)
                 .onAppear {
-                    withAnimation(.easeInOut(duration: 0.5).repeatForever(autoreverses: true)) {
+                    withAnimation(.easeInOut(duration: 0.8).repeatForever(autoreverses: true)) {
                         isAnimating = true
                     }
                 }
@@ -171,7 +183,7 @@ struct PopupMessageView: View {
         .padding()
         .background(Color.black.opacity(0.7))
         .cornerRadius(20)
-        .padding(20)
+        .padding(100)
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 showingPopup = false

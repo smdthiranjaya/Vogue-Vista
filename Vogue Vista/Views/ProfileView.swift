@@ -2,46 +2,49 @@ import SwiftUI
 
 struct ProfileView: View {
     @ObservedObject var profileModel = ProfileModel()
+    @State private var password: String = ""
 
     var body: some View {
-        // Attempt to retrieve and convert the userId to Int
-        guard let userIdString = UserDefaults.standard.string(forKey: "userId"),
-              let userId = Int(userIdString) else {
-            // Consider what should happen if userId is not available or not convertible to Int
-            // For simplicity, this example returns an empty view.
-            // You might want to navigate the user to a different view or show an error.
-            return Text("User ID not found or invalid").toAnyView()
+        VStack {
+            Text("Profile")
+                .font(.largeTitle)
+                .bold()
+                .padding(.top, 20)
+            
+            Image(systemName: "person.crop.circle.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 90, height: 90)
+                .padding()
         }
-        
-        return Form {
-            Section(header: Text("Profile Information")) {
-                TextField("Name", text: Binding(
-                    get: { self.profileModel.profile?.name ?? "" },
-                    set: { self.profileModel.profile?.name = $0 }
-                ))
-                TextField("Email", text: Binding(
-                    get: { self.profileModel.profile?.email ?? "" },
-                    set: { self.profileModel.profile?.email = $0 }
-                ))
-                TextField("Address", text: Binding(
-                    get: { self.profileModel.profile?.address ?? "" },
-                    set: { self.profileModel.profile?.address = $0 }
-                ))
+        Form {
+            Section(header: Text("Profile Information").font(.title)) {
+                HStack {
+                    Image(systemName: "person.fill")
+                    TextField("Name", text: Binding(get: { self.profileModel.profile?.name ?? "" }, set: { self.profileModel.profile?.name = $0 }))
+                }
+                
+                HStack {
+                    Image(systemName: "envelope.fill")
+                    TextField("Email", text: Binding(get: { self.profileModel.profile?.email ?? "" }, set: { self.profileModel.profile?.email = $0 }))
+                }
+                
+                HStack {
+                    Image(systemName: "house.fill")
+                    TextField("Address", text: Binding(get: { self.profileModel.profile?.address ?? "" }, set: { self.profileModel.profile?.address = $0 }))
+                }
                 Button("Update Profile") {
-                    // Call function to update profile
+                    self.profileModel.updateProfileData()
                 }
             }
+            
+
+            
+            Button("Sign Out") {
+                // Implement sign out logic here
+            }
         }
-        .onAppear {
-            self.profileModel.fetchProfileData(userId: userId)
-        }
-        .toAnyView() // Extension to convert View to AnyView for conditional view logic
     }
 }
 
-// Extension to help with conditional view logic by converting any View into AnyView
-extension View {
-    func toAnyView() -> AnyView {
-        AnyView(self)
-    }
 }

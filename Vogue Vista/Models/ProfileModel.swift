@@ -1,3 +1,4 @@
+
 import Foundation
 
 struct Profile: Codable, Equatable {
@@ -5,9 +6,8 @@ struct Profile: Codable, Equatable {
     var name: String
     var email: String
     var address: String?
-    // Add other fields as necessary
+    // No need for profilePictureUrl as we're using a default image
 }
-
 
 class ProfileModel: ObservableObject {
     @Published var profile: Profile?
@@ -31,5 +31,27 @@ class ProfileModel: ObservableObject {
             }
         }.resume()
     }
-
+    
+    func updateProfileData() {
+        guard let profile = profile,
+              let url = URL(string: "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com/users/\(profile.id)") else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let jsonData = try JSONEncoder().encode(profile)
+            request.httpBody = jsonData
+            
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print("Failed to update profile: \(error)")
+                } else {
+                    print("Profile successfully updated.")
+                }
+            }.resume()
+        } catch {
+            print("Failed to encode profile data: \(error)")
+        }
+    }
 }

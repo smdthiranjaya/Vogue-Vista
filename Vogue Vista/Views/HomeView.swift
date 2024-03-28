@@ -23,6 +23,7 @@ struct HomeView: View {
                         
                             loadProducts()
                         }
+                    
                     List(products) { product in
                         NavigationLink(destination: ProductDetailView(products: [product])) {
                             HStack {
@@ -50,12 +51,11 @@ struct HomeView: View {
                     .listStyle(PlainListStyle())
 
                 }
-            }
+            }.padding()
             .navigationBarTitle(Text("Home"), displayMode: .inline)
             .navigationBarItems(
                 leading: HStack {
                     Button(action: {
-                        // Trigger navigation to Profile
                         self.navigateToProfile = true
                     }) {
                         Image(systemName: "person.crop.circle")

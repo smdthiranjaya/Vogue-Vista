@@ -153,10 +153,6 @@ struct HomeView: View {
                 print("Error with the response, unexpected status code: \((response as? HTTPURLResponse)?.statusCode ?? -1)")
                 return
             }
-            // Log the raw data for debugging
-            if let data = data, let rawJSON = String(data: data, encoding: .utf8) {
-                print("Received raw JSON: \(rawJSON)")
-            }
 
             if let data = data {
                 do {

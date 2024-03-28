@@ -35,6 +35,7 @@ struct ShoppingCartView: View {
                         Spacer()
                         Text("$\(String(format: "%.2f", Double(item.price)! * Double(item.quantity)))")
                             .bold()
+                            .foregroundStyle(AppColor.appPrimary)
                         
                         Button(action: {
                             viewModel.removeItemFromCart(itemId: item.id)

@@ -6,7 +6,6 @@ struct Profile: Codable, Equatable {
     var name: String
     var email: String
     var address: String?
-    // No need for profilePictureUrl as we're using a default image
 }
 
 class ProfileModel: ObservableObject {

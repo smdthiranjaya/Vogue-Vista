@@ -1,18 +1,30 @@
 {
   "images" : [
     {
-      "filename" : "Full Shopping Basket(2).png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Full Shopping Basket(2) 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Full Shopping Basket(2) 2.png",
       "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "Vogue Vista 1.png",
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Vogue Vista.png",
+      "idiom" : "iphone",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Vogue Vista 2.png",
+      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],

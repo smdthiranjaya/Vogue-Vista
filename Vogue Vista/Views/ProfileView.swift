@@ -34,51 +34,67 @@ struct ProfileView: View {
                     Image(systemName: "person.fill")
                         .foregroundColor(AppColor.appPrimary)
                     TextField("Name", text: Binding(get: { self.profileModel.profile?.name ?? "" }, set: { self.profileModel.profile?.name = $0 }))
+                        .padding(10) // Increase padding for a bigger touch area
                 }
                 
                 HStack {
                     Image(systemName: "envelope.fill")
                         .foregroundColor(AppColor.appPrimary)
                     TextField("Email", text: Binding(get: { self.profileModel.profile?.email ?? "" }, set: { self.profileModel.profile?.email = $0 }))
+                        .padding(10) // Similar padding for Email
                 }
                 
                 HStack {
                     Image(systemName: "house.fill")
                         .foregroundColor(AppColor.appPrimary)
                     TextField("Address", text: Binding(get: { self.profileModel.profile?.address ?? "" }, set: { self.profileModel.profile?.address = $0 }))
+                        .padding(10) // And Address
                 }
             }
-            
-            Button("Update Profile") {
-                self.profileModel.updateProfileData()
-            }.buttonStyle(FilledRoundedButtonStyle())
-            
-            Button("Sign Out") {
-                showingAlert = true
-            }.buttonStyle(FilledRoundedButtonStyle())
-        }.alert(isPresented: $showingAlert) {
-            Alert(
-                title: Text("Log Out"),
-                message: Text("Are you sure you want to log out?"),
-                primaryButton: .destructive(Text("Yes")) {
-                    UserDefaults.standard.removeObject(forKey: "userToken")
-                    UserDefaults.standard.removeObject(forKey: "userId")
-                    navigateToLogin = true
-                },
-                secondaryButton: .cancel()
-            )
-        }
-        .fullScreenCover(isPresented: $navigateToLogin) {
-            StartupPageViewRepresentable()
-        }
+
+            HStack {
+                Spacer()
+                Button("Update Profile") {
+                    self.profileModel.updateProfileData()
+                }
+                .buttonStyle(EqualWidthButtonStyle())
+                
+                Spacer()
+                
+                Button("Sign Out") {
+                    showingAlert = true
+                }
+                .buttonStyle(EqualWidthButtonStyle())
+                
+                Spacer()
+            }
+        }.background(Color.white)
+            .alert(isPresented: $showingAlert) {
+                Alert(
+                    title: Text("Log Out"),
+                    message: Text("Are you sure you want to log out?"),
+                    primaryButton: .destructive(Text("Yes")) {
+                        UserDefaults.standard.removeObject(forKey: "userToken")
+                        UserDefaults.standard.removeObject(forKey: "userId")
+                        navigateToLogin = true
+                    },
+                    secondaryButton: .cancel()
+                )
+            }
+            .fullScreenCover(isPresented: $navigateToLogin) {
+                SwiftUIWrapperView()
+            }
+            .background(Color.white)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
 
-struct FilledRoundedButtonStyle: ButtonStyle {
+struct EqualWidthButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding()
+            .frame(minWidth: 0, maxWidth: .infinity)
             .background(AppColor.appPrimary)
             .foregroundColor(.white)
             .clipShape(RoundedRectangle(cornerRadius: 10))

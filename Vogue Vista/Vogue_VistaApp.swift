@@ -7,7 +7,7 @@ struct Vogue_VistaApp: App {
             if UserDefaults.standard.string(forKey: "userToken") != nil {
                 HomeView()
             } else {
-                StartupPageViewRepresentable()
+                SwiftUIWrapperView()
             }
         }
     }

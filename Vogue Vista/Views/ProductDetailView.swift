@@ -41,10 +41,16 @@ struct ProductDetailView: View {
 
                 Text(selectedProduct?.name ?? "")
                     .font(.title)
+                    .bold()
                 
                 Text(selectedProduct?.description ?? "")
                     .font(.body)
 
+                Text("Color")
+                    .font(.headline)
+                    .bold()
+                    .multilineTextAlignment(.center)
+                
                 Picker("Color", selection: $selectedColor) {
                     ForEach(colors, id: \.self) { color in
                         Text(color).tag(color)
@@ -54,6 +60,11 @@ struct ProductDetailView: View {
                 .onChange(of: selectedColor) { newValue in
                     selectProduct()
                 }
+                
+                Text("Size")
+                    .font(.headline)
+                    .bold()
+                    .multilineTextAlignment(.center)
 
                 Picker("Size", selection: $selectedSize) {
                     ForEach(sizes, id: \.self) { size in
@@ -61,6 +72,11 @@ struct ProductDetailView: View {
                     }
                 }
                 .pickerStyle(.segmented)
+                
+                Text("Quantity")
+                    .font(.headline)
+                    .bold()
+                    .multilineTextAlignment(.center)
                 
                 Picker("Quantity", selection: $quantity) {
                     ForEach(1..<10) { count in
@@ -74,6 +90,7 @@ struct ProductDetailView: View {
                 }
 
 
+                Spacer()
                 HStack {
                     if let price = selectedProduct?.price {
                         Text("Price: \(price)")

@@ -7,14 +7,14 @@ struct HomeView: View {
     @State private var specialOffers: [Product] = []
     @State private var navigateToProfile = false
     @State private var navigateToCart = false
-
+    
     var body: some View {
         NavigationView {
             ZStack {
                 Color.white.edgesIgnoringSafeArea(.all)
                 ScrollView (showsIndicators: false){
                     VStack {
-                                   
+                        
                         HStack{
                             Image("checkoutProcessImage")
                                 .resizable()
@@ -24,14 +24,14 @@ struct HomeView: View {
                                 .font(.headline)
                                 .fontWeight(.bold)
                                 .padding()
-
+                            
                         }
-    
+                        
                         Text("Discover your unique style with us. Explore the latest trends and timeless pieces that make you feel at home in the world of fashion.")
                             .font(.subheadline)
                             .multilineTextAlignment(.center)
                             .padding([.leading, .trailing, .bottom])
-
+                        
                         TextField("Search...", text: $searchText)
                             .padding(7)
                             .background(Color(.systemGray6))
@@ -46,7 +46,7 @@ struct HomeView: View {
                                 Text("Special Offers")
                                     .font(.headline)
                                     .padding()
-
+                                
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack(spacing: 20) {
                                         ForEach(specialOffers) { offer in
@@ -58,7 +58,7 @@ struct HomeView: View {
                                                 }
                                                 .frame(width: 100, height: 100)
                                                 .cornerRadius(5)
-
+                                                
                                                 Text(offer.name)
                                                     .font(.headline)
                                                 Text("$\(offer.price)")
@@ -73,6 +73,9 @@ struct HomeView: View {
                                 }
                             }
                         }
+                        
+                        Divider()
+                        
                         Text("New Arrivals")
                             .font(.headline)
                             .padding()
@@ -142,18 +145,18 @@ struct HomeView: View {
             print("Invalid URL for special offers")
             return
         }
-
+        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("Error fetching data: \(error.localizedDescription)")
                 return
             }
-
+            
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 print("Error with the response, unexpected status code: \((response as? HTTPURLResponse)?.statusCode ?? -1)")
                 return
             }
-
+            
             if let data = data {
                 do {
                     let decodedResponse = try JSONDecoder().decode([Product].self, from: data)
@@ -166,44 +169,44 @@ struct HomeView: View {
                 }
             }
         }
-
+        
         task.resume()
     }
-
     
-
+    
+    
     private func loadProducts() {
         var components = URLComponents(string: "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com/products")
-
+        
         var queryItems = [URLQueryItem]()
         if !searchText.isEmpty {
             queryItems.append(URLQueryItem(name: "search", value: searchText))
         }
         components?.queryItems = queryItems
-
+        
         guard let url = components?.url else {
             print("Invalid URL")
             return
         }
-
+        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-               
+                
                 print("Error fetching products: \(error.localizedDescription)")
                 return
             }
-
+            
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-        
+                
                 print("Error with the response, unexpected status code: \((response as? HTTPURLResponse)?.statusCode ?? -1)")
                 return
             }
-
+            
             if let data = data {
                 do {
                     
                     let decodedResponse = try JSONDecoder().decode([Product].self, from: data)
-                   
+                    
                     DispatchQueue.main.async {
                         self.products = decodedResponse
                     }
@@ -213,7 +216,7 @@ struct HomeView: View {
                 }
             }
         }
-
+        
         task.resume()
     }
 }

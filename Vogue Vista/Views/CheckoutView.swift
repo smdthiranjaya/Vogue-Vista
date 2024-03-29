@@ -13,23 +13,15 @@ struct CheckoutView: View {
     @State private var promoCode: String = ""
     
     var body: some View {
-//        VStack {
-//            Text("Checkout")
-//                .font(.title)
-//                .bold()
-//                .padding(.top, 20)
-                
-//            Image("checkoutProcessImage")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: 90, height: 90)
             
             ScrollView {
                 VStack(alignment: .leading, spacing: 15) {
-                                Text("Checkout")
-                                    .font(.title)
-                                    .bold()
-                                    .padding(.top, 20)
+                    Text("Checkout")
+                        .font(.title)
+                        .bold()
+                        .padding(.top, 20)
+                
+                    
                     
                     TextField("Address", text: $address)
                         .textFieldStyle(RoundedBorderTextFieldStyle())

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B1D29BD2BA9BBB0003A5AC6 /* StartupPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29BC2BA9BBB0003A5AC6 /* StartupPageViewController.swift */; };
-		1B1D29BF2BA9BBD2003A5AC6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29BE2BA9BBD2003A5AC6 /* SignUpViewController.swift */; };
-		1B1D29C12BA9BC06003A5AC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29C02BA9BC06003A5AC6 /* LoginViewController.swift */; };
-		1B1D29C32BA9BE73003A5AC6 /* UIViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29C22BA9BE72003A5AC6 /* UIViewControllerRepresentable.swift */; };
+		1B1D29BD2BA9BBB0003A5AC6 /* StartupPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29BC2BA9BBB0003A5AC6 /* StartupPageView.swift */; };
+		1B1D29BF2BA9BBD2003A5AC6 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29BE2BA9BBD2003A5AC6 /* SignUpView.swift */; };
+		1B1D29C12BA9BC06003A5AC6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29C02BA9BC06003A5AC6 /* LoginView.swift */; };
+		1B1D29C32BA9BE73003A5AC6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29C22BA9BE72003A5AC6 /* UIView.swift */; };
 		1B1D29C62BA9E167003A5AC6 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D29C42BA9C04D003A5AC6 /* File.swift */; };
 		1B208C332BAE8FF4009A361C /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B208C322BAE8FF4009A361C /* CartManager.swift */; };
 		1B208C352BAE919F009A361C /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B208C342BAE919F009A361C /* CartModel.swift */; };
@@ -41,10 +41,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B1D29BC2BA9BBB0003A5AC6 /* StartupPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupPageViewController.swift; sourceTree = "<group>"; };
-		1B1D29BE2BA9BBD2003A5AC6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		1B1D29C02BA9BC06003A5AC6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		1B1D29C22BA9BE72003A5AC6 /* UIViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		1B1D29BC2BA9BBB0003A5AC6 /* StartupPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupPageView.swift; sourceTree = "<group>"; };
+		1B1D29BE2BA9BBD2003A5AC6 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		1B1D29C02BA9BC06003A5AC6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1B1D29C22BA9BE72003A5AC6 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		1B1D29C42BA9C04D003A5AC6 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		1B208C322BAE8FF4009A361C /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		1B208C342BAE919F009A361C /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
@@ -117,8 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */,
-				1B1D29C22BA9BE72003A5AC6 /* UIViewControllerRepresentable.swift */,
-				1B1D29BC2BA9BBB0003A5AC6 /* StartupPageViewController.swift */,
+				1B1D29C22BA9BE72003A5AC6 /* UIView.swift */,
+				1B1D29BC2BA9BBB0003A5AC6 /* StartupPageView.swift */,
 				1BD6DB202BA2400900E42988 /* Models */,
 				1BD6DB252BA2403A00E42988 /* Views */,
 				1BD6DB322BA240A600E42988 /* ViewModels */,
@@ -155,8 +155,8 @@
 		1BD6DB252BA2403A00E42988 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1B1D29BE2BA9BBD2003A5AC6 /* SignUpViewController.swift */,
-				1B1D29C02BA9BC06003A5AC6 /* LoginViewController.swift */,
+				1B1D29BE2BA9BBD2003A5AC6 /* SignUpView.swift */,
+				1B1D29C02BA9BC06003A5AC6 /* LoginView.swift */,
 				1B3778812BA433E20037B375 /* HomeView.swift */,
 				1B2CB2DF2BB4925900575E4C /* ProfileView.swift */,
 				1BD6DB2C2BA2408400E42988 /* ProductDetailView.swift */,
@@ -287,18 +287,18 @@
 				1BD6DB3D2BA2410600E42988 /* NetworkService.swift in Sources */,
 				1BD6DB382BA240DC00E42988 /* ShoppingCartViewModel.swift in Sources */,
 				1BD6DB3F2BA2411100E42988 /* AuthService.swift in Sources */,
-				1B1D29BF2BA9BBD2003A5AC6 /* SignUpViewController.swift in Sources */,
+				1B1D29BF2BA9BBD2003A5AC6 /* SignUpView.swift in Sources */,
 				1B208C332BAE8FF4009A361C /* CartManager.swift in Sources */,
 				1B208C352BAE919F009A361C /* CartModel.swift in Sources */,
 				1B208C372BAE91D2009A361C /* CartItemModel.swift in Sources */,
 				1B2CB2E22BB4978300575E4C /* ProfileModel.swift in Sources */,
 				1BD6DB2B2BA2407600E42988 /* ProductListView.swift in Sources */,
-				1B1D29BD2BA9BBB0003A5AC6 /* StartupPageViewController.swift in Sources */,
+				1B1D29BD2BA9BBB0003A5AC6 /* StartupPageView.swift in Sources */,
 				1BD6DB462BA2413600E42988 /* Extensions.swift in Sources */,
 				1BD6DB412BA2411800E42988 /* ProductService.swift in Sources */,
 				1B3778822BA433E20037B375 /* HomeView.swift in Sources */,
 				1B2CB2E02BB4925900575E4C /* ProfileView.swift in Sources */,
-				1B1D29C12BA9BC06003A5AC6 /* LoginViewController.swift in Sources */,
+				1B1D29C12BA9BC06003A5AC6 /* LoginView.swift in Sources */,
 				1BD6DB442BA2412C00E42988 /* Constants.swift in Sources */,
 				1BD6DB312BA2409700E42988 /* CheckoutView.swift in Sources */,
 				1BD6DB362BA240D100E42988 /* ProductDetailViewModel.swift in Sources */,
@@ -308,7 +308,7 @@
 				1BD6DB3A2BA240E500E42988 /* CheckoutViewModel.swift in Sources */,
 				1BD6DB2F2BA2408E00E42988 /* ShoppingCartView.swift in Sources */,
 				1BD6DB242BA2402900E42988 /* UsersModel.swift in Sources */,
-				1B1D29C32BA9BE73003A5AC6 /* UIViewControllerRepresentable.swift in Sources */,
+				1B1D29C32BA9BE73003A5AC6 /* UIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

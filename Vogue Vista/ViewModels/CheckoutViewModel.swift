@@ -3,10 +3,8 @@ import Foundation
 class CheckoutViewModel: ObservableObject {
     let baseURL = "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com"
     
-    // Add an @Published property to store the total amount
     @Published var totalAmount: Double
     
-    // Modify the initializer to accept the total amount
     init(totalAmount: Double) {
         self.totalAmount = totalAmount
     }

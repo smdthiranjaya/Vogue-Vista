@@ -2,6 +2,8 @@ import SwiftUI
 
 struct CheckoutView: View {
     @ObservedObject var checkoutViewModel: CheckoutViewModel
+    @ObservedObject var viewModel = ShoppingCartViewModel()
+    
     let deliveryFee = 5.00
     let serviceFee = 2.00
     @State private var address: String = ""
@@ -12,16 +14,15 @@ struct CheckoutView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var promoCode: String = ""
     
+    
     var body: some View {
             
-            ScrollView {
+            ScrollView (showsIndicators: false){
                 VStack(alignment: .leading, spacing: 15) {
                     Text("Checkout")
                         .font(.title)
                         .bold()
                         .padding(.top, 20)
-                
-                    
                     
                     TextField("Address", text: $address)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -48,11 +49,9 @@ struct CheckoutView: View {
                     
                     TotalView(totalAmount: checkoutViewModel.totalAmount + deliveryFee + serviceFee)
                     
-                    
                     Text("By completing your purchase, you agree to our payment terms: All sales are final, payments are processed securely, and personal data is handled in accordance with our privacy policy. For support, please contact customer service.")
                         .font(.caption2)
                         .padding(.top, 20)
-                    
 
                 }
                 .padding()
@@ -68,6 +67,8 @@ struct CheckoutView: View {
                 .background(validateInputs() ? AppColor.appPrimary : AppColor.appPrimary.opacity(0.1))
                 .cornerRadius(10)
                 .padding()
+            }.onAppear {
+                viewModel.fetchCart()
             }
             .padding()
             .navigationTitle("Checkout")
@@ -82,12 +83,53 @@ struct CheckoutView: View {
     }
 
     private func placeOrder() {
+        guard let userId = UserDefaults.standard.object(forKey: "userId") as? Int else {
+            print("User ID not found")
+            return
+        }
+        let orderDetails = Order( id: 1, userId: userId, items: viewModel.items, address: address, cardNumber: cardNumber, totalAmount: checkoutViewModel.totalAmount + deliveryFee + serviceFee, createdAt: getCurrentDate(), status: "Pending")
+        print(":::::::::::::::::::::: \(viewModel.items)")
+        sendOrderToServer(orderDetails)
+        
         showingPopup = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             showingPopup = false
             presentationMode.wrappedValue.dismiss()
         }
     }
+}
+
+func sendOrderToServer(_ orderDetails: Order) {
+    guard let url = URL(string: "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com/order/create") else { return }
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+    do {
+        let jsonData = try JSONEncoder().encode(orderDetails)
+        request.httpBody = jsonData
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error sending order: \(error)")
+                return
+            }
+            guard let data = data else {
+                print("No data received")
+                return
+            }
+            // Handle the response from your server
+        }.resume()
+    } catch {
+        print("Error encoding order details: \(error)")
+    }
+}
+
+
+private func getCurrentDate() -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    return formatter.string(from: Date())
 }
 
 

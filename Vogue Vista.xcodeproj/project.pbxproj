@@ -17,6 +17,7 @@
 		1B208C372BAE91D2009A361C /* CartItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B208C362BAE91D2009A361C /* CartItemModel.swift */; };
 		1B2CB2E02BB4925900575E4C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2CB2DF2BB4925900575E4C /* ProfileView.swift */; };
 		1B2CB2E22BB4978300575E4C /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2CB2E12BB4978300575E4C /* ProfileModel.swift */; };
+		1B2DCA5B2BB6B20D004D2790 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2DCA5A2BB6B20D004D2790 /* OrderModel.swift */; };
 		1B3778822BA433E20037B375 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3778812BA433E20037B375 /* HomeView.swift */; };
 		1BD6DB0C2BA23A5F00E42988 /* Vogue_VistaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */; };
 		1BD6DB102BA23A6100E42988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD6DB0F2BA23A6100E42988 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		1B208C362BAE91D2009A361C /* CartItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemModel.swift; sourceTree = "<group>"; };
 		1B2CB2DF2BB4925900575E4C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1B2CB2E12BB4978300575E4C /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		1B2DCA5A2BB6B20D004D2790 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		1B3778812BA433E20037B375 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1BD6DB082BA23A5F00E42988 /* Vogue Vista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vogue Vista.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD6DB0B2BA23A5F00E42988 /* Vogue_VistaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vogue_VistaApp.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				1BD6DB232BA2402900E42988 /* UsersModel.swift */,
 				1B208C342BAE919F009A361C /* CartModel.swift */,
 				1B2CB2E12BB4978300575E4C /* ProfileModel.swift */,
+				1B2DCA5A2BB6B20D004D2790 /* OrderModel.swift */,
 				1B208C362BAE91D2009A361C /* CartItemModel.swift */,
 			);
 			path = Models;
@@ -306,6 +309,7 @@
 				1BD6DB342BA240BE00E42988 /* ProductListViewModel.swift in Sources */,
 				1BD6DB222BA2401900E42988 /* ProductModel.swift in Sources */,
 				1BD6DB3A2BA240E500E42988 /* CheckoutViewModel.swift in Sources */,
+				1B2DCA5B2BB6B20D004D2790 /* OrderModel.swift in Sources */,
 				1BD6DB2F2BA2408E00E42988 /* ShoppingCartView.swift in Sources */,
 				1BD6DB242BA2402900E42988 /* UsersModel.swift in Sources */,
 				1B1D29C32BA9BE73003A5AC6 /* UIView.swift in Sources */,

@@ -5,6 +5,8 @@ struct ProfileView: View {
     @State private var password: String = ""
     @State private var showingAlert = false
     @State private var navigateToLogin = false
+    @State private var showingProfileAlert = false
+    
     
     var body: some View {
         VStack {
@@ -12,7 +14,7 @@ struct ProfileView: View {
                 .font(.largeTitle)
                 .bold()
                 .padding(.top, 15)
-
+            
             
             Image(systemName: "person.crop.circle.fill")
                 .resizable()
@@ -51,11 +53,12 @@ struct ProfileView: View {
                         .padding(10) // And Address
                 }
             }
-
+            
             HStack {
                 Spacer()
                 Button("Update Profile") {
                     self.profileModel.updateProfileData()
+                    self.showingProfileAlert = true
                 }
                 .buttonStyle(EqualWidthButtonStyle())
                 
@@ -67,6 +70,9 @@ struct ProfileView: View {
                 .buttonStyle(EqualWidthButtonStyle())
                 
                 Spacer()
+            }
+            .alert(isPresented: $showingProfileAlert) {
+                Alert(title: Text("Profile Details Updated"), message: Text("Profile Updated Successfully!"), dismissButton: .default(Text("OK")))
             }
         }.background(Color.white)
             .alert(isPresented: $showingAlert) {

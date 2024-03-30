@@ -10,17 +10,17 @@ struct ProductDetailView: View {
     @State private var showingAddToCartAlert = false
     @State private var addToCartMessage = ""
     @State private var navigateToCart = false
-
+    
     private let cartManager = CartManager()
-
+    
     private var colors: [String] {
         Set(products.map { $0.color }).sorted()
     }
-
+    
     private var sizes: [String] {
         Set(products.map { $0.size }).sorted()
     }
-
+    
     init(products: [Product]) {
         self.products = products
         _selectedColor = State(initialValue: products.first?.color ?? "")
@@ -28,7 +28,7 @@ struct ProductDetailView: View {
         _selectedProduct = State(initialValue: products.first)
         
     }
-
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
@@ -38,14 +38,14 @@ struct ProductDetailView: View {
                     ProgressView()
                 }
                 .aspectRatio(contentMode: .fit)
-
+                
                 Text(selectedProduct?.name ?? "")
                     .font(.title)
                     .bold()
                 
                 Text(selectedProduct?.description ?? "")
                     .font(.body)
-
+                
                 Text("Color")
                     .font(.headline)
                     .bold()
@@ -65,7 +65,7 @@ struct ProductDetailView: View {
                     .font(.headline)
                     .bold()
                     .multilineTextAlignment(.center)
-
+                
                 Picker("Size", selection: $selectedSize) {
                     ForEach(sizes, id: \.self) { size in
                         Text(size).tag(size)
@@ -88,8 +88,8 @@ struct ProductDetailView: View {
                 .onChange(of: selectedSize) { newValue in
                     selectProduct()
                 }
-
-
+                
+                
                 Spacer()
                 HStack {
                     if let price = selectedProduct?.price {
@@ -115,13 +115,13 @@ struct ProductDetailView: View {
                 .foregroundColor(.white)
                 .background(AppColor.appPrimary)
                 .cornerRadius(10)
-
-            
+                
+                
                 .alert(isPresented: $showingAddToCartAlert) {
                     Alert(title: Text("Cart Update"), message: Text(addToCartMessage), dismissButton: .default(Text("OK")))
                 }
                 .padding()
-            
+                
                 
             }
             .padding()
@@ -131,10 +131,11 @@ struct ProductDetailView: View {
         .navigationBarItems(trailing: Button(action: {
             self.navigateToCart = true
         }) {
-            Image(systemName: "cart")
+            Image(systemName: "cart.fill")
+                .foregroundStyle(AppColor.appPrimary)
         })
     }
-
+    
     private func selectProduct() {
         selectedProduct = products.first { $0.color == selectedColor && $0.size == selectedSize }
     }

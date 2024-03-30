@@ -10,10 +10,7 @@ class ShoppingCartViewModel: ObservableObject {
     }
 
     struct RemovedItem: Decodable {
-        // Add properties that match the returned item structure
-        // Example:
         let id: Int
-        // Include other properties as per your server response
     }
 
     
@@ -75,8 +72,7 @@ class ShoppingCartViewModel: ObservableObject {
                 let removedItemResponse = try JSONDecoder().decode(RemoveItemResponse.self, from: data)
                 DispatchQueue.main.async {
                     print("Item removed: \(removedItemResponse.message)")
-                    // If needed, handle the removed item data
-                    self?.fetchCart() // Refresh the cart items
+                    self?.fetchCart()
                 }
             } catch {
                 DispatchQueue.main.async {

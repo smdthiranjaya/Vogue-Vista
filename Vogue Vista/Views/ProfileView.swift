@@ -36,21 +36,21 @@ struct ProfileView: View {
                     Image(systemName: "person.fill")
                         .foregroundColor(AppColor.appPrimary)
                     TextField("Name", text: Binding(get: { self.profileModel.profile?.name ?? "" }, set: { self.profileModel.profile?.name = $0 }))
-                        .padding(10) // Increase padding for a bigger touch area
+                        .padding(10)
                 }
                 
                 HStack {
                     Image(systemName: "envelope.fill")
                         .foregroundColor(AppColor.appPrimary)
                     TextField("Email", text: Binding(get: { self.profileModel.profile?.email ?? "" }, set: { self.profileModel.profile?.email = $0 }))
-                        .padding(10) // Similar padding for Email
+                        .padding(10)
                 }
                 
                 HStack {
                     Image(systemName: "house.fill")
                         .foregroundColor(AppColor.appPrimary)
                     TextField("Address", text: Binding(get: { self.profileModel.profile?.address ?? "" }, set: { self.profileModel.profile?.address = $0 }))
-                        .padding(10) // And Address
+                        .padding(10)
                 }
             }
             

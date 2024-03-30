@@ -7,6 +7,7 @@ struct HomeView: View {
     @State private var specialOffers: [Product] = []
     @State private var navigateToProfile = false
     @State private var navigateToCart = false
+    @ObservedObject var viewModel = ProductViewModel()
     
     var body: some View {
         NavigationView {
@@ -38,10 +39,10 @@ struct HomeView: View {
                             .cornerRadius(8)
                             .padding(.top, 20)
                             .onSubmit {
-                                loadProducts()
+                                viewModel.loadProducts(searchText: searchText)
                             }
                         
-                        if !specialOffers.isEmpty {
+                        if !viewModel.specialOffers.isEmpty {
                             VStack(alignment: .leading) {
                                 Text("Special Offers")
                                     .font(.headline)
@@ -49,7 +50,7 @@ struct HomeView: View {
                                 
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack(spacing: 20) {
-                                        ForEach(specialOffers) { offer in
+                                        ForEach(viewModel.specialOffers) { offer in
                                             VStack(alignment: .leading) {
                                                 AsyncImage(url: URL(string: offer.imageUrl)) { image in
                                                     image.resizable()
@@ -80,7 +81,7 @@ struct HomeView: View {
                             .font(.headline)
                             .padding()
                         
-                        ForEach(products) { product in
+                        ForEach(viewModel.products) { product in
                             NavigationLink(destination: ProductDetailView(products: [product])) {
                                 HStack {
                                     AsyncImage(url: URL(string: product.imageUrl)) { image in
@@ -121,7 +122,7 @@ struct HomeView: View {
                     Button(action: {
                         self.navigateToProfile = true
                     }) {
-                        Image(systemName: "person.crop.circle")
+                        Image(systemName: "person.crop.circle.fill")
                             .imageScale(.large)
                             .foregroundStyle(AppColor.appPrimary)
                     }
@@ -129,94 +130,14 @@ struct HomeView: View {
                 trailing: Button(action: {
                     self.navigateToCart = true
                 }) {
-                    Image(systemName: "cart")
+                    Image(systemName: "cart.fill")
                         .foregroundStyle(AppColor.appPrimary)
                 }
             )
             .onAppear {
-                loadProducts()
-                loadSpecialOffers()
+                viewModel.loadProducts()
+                viewModel.loadSpecialOffers()
             }
         }
-    }
-    
-    private func loadSpecialOffers() {
-        guard let url = URL(string: "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com/special-offers") else {
-            print("Invalid URL for special offers")
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print("Error fetching data: \(error.localizedDescription)")
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                print("Error with the response, unexpected status code: \((response as? HTTPURLResponse)?.statusCode ?? -1)")
-                return
-            }
-            
-            if let data = data {
-                do {
-                    let decodedResponse = try JSONDecoder().decode([Product].self, from: data)
-                    DispatchQueue.main.async {
-                        self.specialOffers = decodedResponse
-                        print("Special offers loaded: \(self.specialOffers.count)")
-                    }
-                } catch let jsonError {
-                    print("Failed to decode JSON for special offers: \(jsonError.localizedDescription)")
-                }
-            }
-        }
-        
-        task.resume()
-    }
-    
-    
-    
-    private func loadProducts() {
-        var components = URLComponents(string: "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com/products")
-        
-        var queryItems = [URLQueryItem]()
-        if !searchText.isEmpty {
-            queryItems.append(URLQueryItem(name: "search", value: searchText))
-        }
-        components?.queryItems = queryItems
-        
-        guard let url = components?.url else {
-            print("Invalid URL")
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                
-                print("Error fetching products: \(error.localizedDescription)")
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                
-                print("Error with the response, unexpected status code: \((response as? HTTPURLResponse)?.statusCode ?? -1)")
-                return
-            }
-            
-            if let data = data {
-                do {
-                    
-                    let decodedResponse = try JSONDecoder().decode([Product].self, from: data)
-                    
-                    DispatchQueue.main.async {
-                        self.products = decodedResponse
-                    }
-                } catch let jsonError {
-                    
-                    print("Failed to decode JSON: \(jsonError.localizedDescription)")
-                }
-            }
-        }
-        
-        task.resume()
     }
 }

@@ -13,7 +13,7 @@ struct LoginView: View {
     var body: some View {
         VStack {
             Spacer()
-
+            
             Image(systemName: "person.fill")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -21,10 +21,7 @@ struct LoginView: View {
                 .clipped()
                 .padding(.bottom, 50)
                 .foregroundColor(AppColor.appPrimary)
-            
-
-
-            
+    
             HStack {
                 Image(systemName: "envelope")
                     .foregroundColor(.gray)
@@ -36,7 +33,7 @@ struct LoginView: View {
             .cornerRadius(10)
             .padding(.horizontal)
             
-
+            
             HStack {
                 Image(systemName: "lock")
                     .foregroundColor(.gray)
@@ -48,7 +45,7 @@ struct LoginView: View {
             .padding(.horizontal)
             .padding(.top, 10)
             
-
+            
             Button("Log In") {
                 loginButtonTapped()
             }
@@ -62,7 +59,7 @@ struct LoginView: View {
             
             Spacer()
             
-
+            
             HStack {
                 Text("Don't have an account?")
                     .foregroundColor(.gray)
@@ -74,8 +71,8 @@ struct LoginView: View {
             }
             .padding(.bottom)
             .sheet(isPresented: $showingSignup) {
-                        SignUpView()
-                    }
+                SignUpView()
+            }
             Spacer()
         }
         .alert(isPresented: $showingAlert) {
@@ -105,14 +102,14 @@ struct LoginView: View {
                     self.alertMessage = "Failed to log in: \(error.localizedDescription)"
                     self.showingAlert = true
                 } else if loginResponse != nil {
-
+                    
                     UserDefaults.standard.set(loginResponse?.userId, forKey: "userId")
                     UserDefaults.standard.set(loginResponse?.token, forKey: "userToken")
                     
                     self.alertTitle = "Login Success"
                     self.alertMessage = "You're now logged in!"
                     self.showingAlert = true
-
+                    
                 } else {
                     self.alertTitle = "Login Error"
                     self.alertMessage = "An unknown error occurred."

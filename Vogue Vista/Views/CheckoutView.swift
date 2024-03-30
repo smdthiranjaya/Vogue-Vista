@@ -16,79 +16,79 @@ struct CheckoutView: View {
     
     
     var body: some View {
-            
-            ScrollView (showsIndicators: false){
-                VStack(alignment: .leading, spacing: 15) {
-                    Text("Checkout")
-                        .font(.title)
-                        .bold()
-                        .padding(.top, 20)
-                    
-                    TextField("Address", text: $address)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.top, 5)
-                        .iconPrefix(systemName: "location.fill")
-                    
-                    TextField("Card Number", text: $cardNumber)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .iconPrefix(systemName: "creditcard.fill")
-                    
-                    TextField("Expiry Date", text: $expiryDate)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .iconPrefix(systemName: "calendar")
-                    
-                    TextField("CVV", text: $cvv)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .iconPrefix(systemName: "lock.fill")
-                    
-                    PromoCodeEntryField(promoCode: $promoCode)
-                    
-                    FeeRowView(title: "Subtotal", icon: "cart.fill", amount: checkoutViewModel.totalAmount)
-                    FeeRowView(title: "Delivery Fee", icon: "bicycle", amount: deliveryFee)
-                    FeeRowView(title: "Service Fee", icon: "wrench.and.screwdriver.fill", amount: serviceFee)
-                    
-                    TotalView(totalAmount: checkoutViewModel.totalAmount + deliveryFee + serviceFee)
-                    
-                    Text("By completing your purchase, you agree to our payment terms: All sales are final, payments are processed securely, and personal data is handled in accordance with our privacy policy. For support, please contact customer service.")
-                        .font(.caption2)
-                        .padding(.top, 20)
-
-                }
-                .padding()
+        
+        ScrollView (showsIndicators: false){
+            VStack(alignment: .leading, spacing: 15) {
+                Text("Checkout")
+                    .font(.title)
+                    .bold()
+                    .padding(.top, 20)
                 
-                Button("Place Order") {
-                    if validateInputs() {
-                        placeOrder()
-                    }
-                }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .padding()
-                .foregroundColor(.white)
-                .background(validateInputs() ? AppColor.appPrimary : AppColor.appPrimary.opacity(0.1))
-                .cornerRadius(10)
-                .padding()
-            }.onAppear {
-                viewModel.fetchCart()
+                TextField("Address", text: $address)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.top, 5)
+                    .iconPrefix(systemName: "location.fill")
+                
+                TextField("Card Number", text: $cardNumber)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .iconPrefix(systemName: "creditcard.fill")
+                
+                TextField("Expiry Date", text: $expiryDate)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .iconPrefix(systemName: "calendar")
+                
+                TextField("CVV", text: $cvv)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .iconPrefix(systemName: "lock.fill")
+                
+                PromoCodeEntryField(promoCode: $promoCode)
+                
+                FeeRowView(title: "Subtotal", icon: "cart.fill", amount: checkoutViewModel.totalAmount)
+                FeeRowView(title: "Delivery Fee", icon: "bicycle", amount: deliveryFee)
+                FeeRowView(title: "Service Fee", icon: "wrench.and.screwdriver.fill", amount: serviceFee)
+                
+                TotalView(totalAmount: checkoutViewModel.totalAmount + deliveryFee + serviceFee)
+                
+                Text("By completing your purchase, you agree to our payment terms: All sales are final, payments are processed securely, and personal data is handled in accordance with our privacy policy. For support, please contact customer service.")
+                    .font(.caption2)
+                    .padding(.top, 20)
+                
             }
             .padding()
-            .navigationTitle("Checkout")
-            .navigationBarTitleDisplayMode(.inline)
-            .overlay(
-                showingPopup ? PopupMessageView(showingPopup: $showingPopup) : nil
-            )
+            
+            Button("Place Order") {
+                if validateInputs() {
+                    placeOrder()
+                }
+            }
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .padding()
+            .foregroundColor(.white)
+            .background(validateInputs() ? AppColor.appPrimary : AppColor.appPrimary.opacity(0.1))
+            .cornerRadius(10)
+            .padding()
+        }.onAppear {
+            viewModel.fetchCart()
         }
+        .padding()
+        .navigationTitle("Checkout")
+        .navigationBarTitleDisplayMode(.inline)
+        .overlay(
+            showingPopup ? PopupMessageView(showingPopup: $showingPopup) : nil
+        )
+    }
     
     private func validateInputs() -> Bool {
         return !address.isEmpty && !cardNumber.isEmpty && !expiryDate.isEmpty && !cvv.isEmpty
     }
-
+    
     private func placeOrder() {
         guard let userId = UserDefaults.standard.object(forKey: "userId") as? Int else {
             print("User ID not found")
             return
         }
         let orderDetails = Order( id: 1, userId: userId, items: viewModel.items, address: address, cardNumber: cardNumber, totalAmount: checkoutViewModel.totalAmount + deliveryFee + serviceFee, createdAt: getCurrentDate(), status: "Pending")
-        print(":::::::::::::::::::::: \(viewModel.items)")
+        
         sendOrderToServer(orderDetails)
         
         showingPopup = true
@@ -104,11 +104,11 @@ func sendOrderToServer(_ orderDetails: Order) {
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
+    
     do {
         let jsonData = try JSONEncoder().encode(orderDetails)
         request.httpBody = jsonData
-
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print("Error sending order: \(error)")
@@ -118,7 +118,6 @@ func sendOrderToServer(_ orderDetails: Order) {
                 print("No data received")
                 return
             }
-            // Handle the response from your server
         }.resume()
     } catch {
         print("Error encoding order details: \(error)")

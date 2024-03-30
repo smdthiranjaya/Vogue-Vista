@@ -101,7 +101,6 @@ struct SignUpView: View {
                     self.alertTitle = "Success"
                     self.alertMessage = "You have successfully registered."
                     self.showingAlert = true
-                    // self.presentationMode.wrappedValue.dismiss() // Uncomment to dismiss the view
                 } else if let error = error {
                     self.alertTitle = "Registration Error"
                     self.alertMessage = error.localizedDescription

@@ -4,7 +4,7 @@ import SwiftUI
 struct ShoppingCartView: View {
     @ObservedObject var viewModel = ShoppingCartViewModel()
     @State private var showingCheckout = false
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -43,7 +43,7 @@ struct ShoppingCartView: View {
                             Image(systemName: "trash")
                                 .foregroundColor(.red)
                         }
-
+                        
                     }
                     
                 }
@@ -52,7 +52,7 @@ struct ShoppingCartView: View {
                     Text("Subtotal: ")
                         .font(.headline)
                     Spacer()
-                
+                    
                     Text("$\(viewModel.totalPrice)")
                         .font(.headline)
                         .bold()
@@ -61,7 +61,6 @@ struct ShoppingCartView: View {
                 .padding()
                 
                 Button("Checkout") {
-                    // This triggers the modal presentation
                     showingCheckout = true
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
@@ -73,7 +72,6 @@ struct ShoppingCartView: View {
             }
             .navigationBarTitle("Shopping Cart", displayMode: .inline)
             .sheet(isPresented: $showingCheckout) {
-                // Assuming CheckoutView initialization with necessary parameters
                 CheckoutView(checkoutViewModel: CheckoutViewModel(totalAmount: Double(viewModel.totalPrice) ?? 0.0))
             }
         }

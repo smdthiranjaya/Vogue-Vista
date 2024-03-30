@@ -12,12 +12,12 @@ struct Order: Codable, Identifiable {
 
     private enum CodingKeys: String, CodingKey {
         case id
-        case userId = "userId" // Modified to match the server's expectation
+        case userId = "userId"
         case items
         case address
-        case cardNumber = "cardNumber" // Assuming the server expects camelCase
-        case totalAmount = "totalAmount" // Assuming the server expects camelCase
-        case createdAt = "createdAt" // Assuming the server expects camelCase
+        case cardNumber = "cardNumber"
+        case totalAmount = "totalAmount"
+        case createdAt = "createdAt"
         case status
     }
 }

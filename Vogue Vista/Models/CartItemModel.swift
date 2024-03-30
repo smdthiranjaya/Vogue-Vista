@@ -12,7 +12,7 @@ struct CartItem: Codable, Identifiable {
     let created_at: String
     let cart_id: Int
     let imageUrl: String
-
+    
     private enum CodingKeys: String, CodingKey {
         case id, product_id, color, size, quantity, price, name, created_at, cart_id
         case imageUrl = "imageurl"

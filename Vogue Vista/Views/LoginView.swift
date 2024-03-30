@@ -21,7 +21,7 @@ struct LoginView: View {
                 .clipped()
                 .padding(.bottom, 50)
                 .foregroundColor(AppColor.appPrimary)
-    
+            
             HStack {
                 Image(systemName: "envelope")
                     .foregroundColor(.gray)
@@ -73,6 +73,12 @@ struct LoginView: View {
             .sheet(isPresented: $showingSignup) {
                 SignUpView()
             }
+            Text("By signing in, you agree to our Terms of Service and Privacy Policy.")
+                .font(.footnote)
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+            
             Spacer()
         }
         .alert(isPresented: $showingAlert) {
@@ -88,12 +94,11 @@ struct LoginView: View {
     }
     
     private func loginButtonTapped() {
-        guard !email.isEmpty, !password.isEmpty else {
-            alertTitle = "Input Error"
-            alertMessage = "Please enter your email and password."
+        guard validateInputs() else {
             showingAlert = true
             return
         }
+        
         let usersModel = UsersModel()
         usersModel.loginUser(email: email, password: password) { loginResponse, error in
             DispatchQueue.main.async {
@@ -117,5 +122,21 @@ struct LoginView: View {
                 }
             }
         }
+    }
+    
+    private func validateInputs() -> Bool {
+        if email.isEmpty || password.isEmpty {
+            alertTitle = "Input Error"
+            alertMessage = "Please enter your email and password."
+            return false
+        }
+        
+        if !email.isValidEmail {
+            alertTitle = "Invalid Email"
+            alertMessage = "Please enter a valid email address."
+            return false
+        }
+        
+        return true
     }
 }

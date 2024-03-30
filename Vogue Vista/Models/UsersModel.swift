@@ -12,10 +12,10 @@ struct LoginResponse: Codable {
 }
 
 class UsersModel {
-    let baseUrlString = "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com/users"
+    let baseURL = URL(string: AppConfiguration.serverURL)!
     
     func registerUser(email: String, password: String, name: String, completion: @escaping (Bool, Error?) -> Void) {
-        guard let url = URL(string: "\(baseUrlString)/register") else { return }
+        guard let url = URL(string: "\(baseURL)/register") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -32,7 +32,7 @@ class UsersModel {
     }
     
     func loginUser(email: String, password: String, completion: @escaping (LoginResponse?, Error?) -> Void) {
-        guard let url = URL(string: "\(baseUrlString)/login") else { return }
+        guard let url = URL(string: "\(baseURL)/login") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

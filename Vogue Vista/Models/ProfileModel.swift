@@ -10,9 +10,10 @@ struct Profile: Codable, Equatable {
 
 class ProfileModel: ObservableObject {
     @Published var profile: Profile?
+    let baseURL = URL(string: AppConfiguration.serverURL)!
     
     func fetchProfileData(userId: Int) {
-        guard let url = URL(string: "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com/users/\(userId)") else { return }
+        guard let url = URL(string: "\(baseURL)/users/\(userId)") else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
@@ -33,7 +34,7 @@ class ProfileModel: ObservableObject {
     
     func updateProfileData() {
         guard let profile = profile,
-              let url = URL(string: "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com/users/\(profile.id)") else { return }
+              let url = URL(string: "\(baseURL)/users/\(profile.id)") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"

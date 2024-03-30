@@ -10,21 +10,21 @@ struct SignUpView: View {
     @State private var alertTitle: String = ""
     @State private var alertMessage: String = ""
     @State private var showingLogin = false
-
+    
     private let usersModel = UsersModel()
     
     var body: some View {
         VStack {
             Spacer()
-
+            
             Image(systemName: "person.crop.circle.badge.plus")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 120, height: 120)
                 .padding(.bottom, 50)
                 .foregroundColor(AppColor.appPrimary)
-
-  
+            
+            
             HStack {
                 Image(systemName: "person")
                     .foregroundColor(.gray)
@@ -35,7 +35,7 @@ struct SignUpView: View {
             .background(Color(.systemGray6))
             .cornerRadius(10)
             .padding(.horizontal)
-
+            
             HStack {
                 Image(systemName: "envelope")
                     .foregroundColor(.gray)
@@ -49,7 +49,7 @@ struct SignUpView: View {
             .padding(.horizontal)
             .padding(.top, 10)
             
-
+            
             HStack {
                 Image(systemName: "lock")
                     .foregroundColor(.gray)
@@ -60,7 +60,7 @@ struct SignUpView: View {
             .cornerRadius(10)
             .padding(.horizontal)
             .padding(.top, 10)
-
+            
             Button("Sign Up") {
                 signUpButtonTapped()
             }
@@ -73,7 +73,7 @@ struct SignUpView: View {
             .padding(.top, 20)
             
             Spacer()
-
+            
             HStack {
                 Text("Already have an account?")
                     .foregroundColor(.gray)
@@ -85,8 +85,8 @@ struct SignUpView: View {
             }
             .padding(.bottom)
             .sheet(isPresented: $showingLogin) {
-                        LoginView()
-                    }
+                LoginView()
+            }
             Spacer()
         }
         .alert(isPresented: $showingAlert) {
@@ -95,6 +95,11 @@ struct SignUpView: View {
     }
     
     private func signUpButtonTapped() {
+        guard validateInputs() else {
+            self.showingAlert = true
+            return
+        }
+        
         usersModel.registerUser(email: email, password: password, name: name) { success, error in
             DispatchQueue.main.async {
                 if success {
@@ -109,4 +114,29 @@ struct SignUpView: View {
             }
         }
     }
+    
+    private func validateInputs() -> Bool {
+        if name.isEmpty || email.isEmpty || password.isEmpty {
+            self.alertTitle = "Missing Information"
+            self.alertMessage = "Please fill out all fields."
+            return false
+        }
+        
+        if !email.isValidEmail {
+            self.alertTitle = "Invalid Email"
+            self.alertMessage = "Please enter a valid email address."
+            return false
+        }
+        
+        if password.count < 6 {
+            self.alertTitle = "Password Too Short"
+            self.alertMessage = "Password must be at least 6 characters."
+            return false
+        }
+        
+        return true
+    }
+    
 }
+
+

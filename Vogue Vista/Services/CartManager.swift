@@ -1,7 +1,7 @@
 import Foundation
 
 class CartManager {
-    let baseURL = "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com" 
+    let baseURL = URL(string: AppConfiguration.serverURL)!
     
     func addToCart(userId: Int, productId: Int, color: String, size: String, quantity: Int, price: Double, name: String , imageUrl: String, completion: @escaping (Bool, String) -> Void) {
         guard let url = URL(string: "\(baseURL)/cart/add") else {

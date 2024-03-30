@@ -4,8 +4,11 @@ class ProductViewModel: ObservableObject {
     @Published var products: [Product] = []
     @Published var specialOffers: [Product] = []
     
+    let baseURL = URL(string: AppConfiguration.serverURL)!
+    
     func loadSpecialOffers() {
-        guard let url = URL(string: "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com/special-offers") else {
+        
+        guard let url = URL(string: "\(baseURL)/special-offers") else {
             print("Invalid URL for special offers")
             return
         }
@@ -38,7 +41,7 @@ class ProductViewModel: ObservableObject {
     }
     
     func loadProducts(searchText: String = "") {
-        var components = URLComponents(string: "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com/products")
+        var components = URLComponents(string: "\(baseURL)/products")
         
         var queryItems = [URLQueryItem]()
         if !searchText.isEmpty {

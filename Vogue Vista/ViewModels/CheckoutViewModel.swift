@@ -1,20 +1,21 @@
 import Foundation
 
 class CheckoutViewModel: ObservableObject {
-    let baseURL = "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com"
+    let baseURL = URL(string: AppConfiguration.serverURL)!
+    
     
     @Published var totalAmount: Double
     
     init(totalAmount: Double) {
         self.totalAmount = totalAmount
     }
-
+    
     func checkoutCart() {
         guard let userId = UserDefaults.standard.object(forKey: "userId") as? Int else {
             print("User ID not found")
             return
         }
-
+        
         let url = URL(string: "\(baseURL)/checkout/\(userId)")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

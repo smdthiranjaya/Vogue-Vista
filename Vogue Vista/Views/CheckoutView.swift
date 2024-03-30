@@ -4,6 +4,8 @@ struct CheckoutView: View {
     @ObservedObject var checkoutViewModel: CheckoutViewModel
     @ObservedObject var viewModel = ShoppingCartViewModel()
     
+    private let OrderviewModel = OrderManager()
+    
     let deliveryFee = 5.00
     let serviceFee = 2.00
     @State private var address: String = ""
@@ -89,38 +91,13 @@ struct CheckoutView: View {
         }
         let orderDetails = Order( id: 1, userId: userId, items: viewModel.items, address: address, cardNumber: cardNumber, totalAmount: checkoutViewModel.totalAmount + deliveryFee + serviceFee, createdAt: getCurrentDate(), status: "Pending")
         
-        sendOrderToServer(orderDetails)
+        OrderviewModel.sendOrderToServer(orderDetails)
         
         showingPopup = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             showingPopup = false
             presentationMode.wrappedValue.dismiss()
         }
-    }
-}
-
-func sendOrderToServer(_ orderDetails: Order) {
-    guard let url = URL(string: "https://ancient-taiga-27787-c7cd95aba2be.herokuapp.com/order/create") else { return }
-    var request = URLRequest(url: url)
-    request.httpMethod = "POST"
-    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-    
-    do {
-        let jsonData = try JSONEncoder().encode(orderDetails)
-        request.httpBody = jsonData
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print("Error sending order: \(error)")
-                return
-            }
-            guard let data = data else {
-                print("No data received")
-                return
-            }
-        }.resume()
-    } catch {
-        print("Error encoding order details: \(error)")
     }
 }
 
@@ -136,7 +113,6 @@ struct FeeRowView: View {
     let title: String
     let icon: String
     let amount: Double
-    
     var body: some View {
         HStack {
             Image(systemName: icon)
@@ -182,15 +158,7 @@ struct TotalView: View {
     }
 }
 
-extension View {
-    func iconPrefix(systemName: String) -> some View {
-        HStack {
-            Image(systemName: systemName)
-                .foregroundColor(AppColor.appPrimary.opacity(0.8))
-            self
-        }
-    }
-}
+
 
 
 struct PopupMessageView: View {

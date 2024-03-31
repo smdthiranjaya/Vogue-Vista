@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6572141E-42B9-47CD-8DBA-8E113F134443"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "402E4916-336B-4D0B-BE32-7E3F93596C12"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vogue Vista/Screens/home.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "loadProducts()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "402E4916-336B-4D0B-BE32-7E3F93596C12 - 45642012d17e7bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Vogue_Vista.HomeView.loadProducts() -&gt; ()"
+                  moduleName = "Vogue Vista"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiranjaya/NIBM/APP/IOS%20App/Vogue%20Vista/Vogue%20Vista/Screens/home.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "872">
+               </Location>
+               <Location
+                  uuid = "402E4916-336B-4D0B-BE32-7E3F93596C12 - 45642012d17e45e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Vogue_Vista.HomeView.loadProducts() -&gt; ()"
+                  moduleName = "Vogue Vista"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiranjaya/NIBM/APP/IOS%20App/Vogue%20Vista/Vogue%20Vista/Screens/home.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "416">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -15,7 +15,7 @@ class UsersModel {
     let baseURL = URL(string: AppConfiguration.serverURL)!
     
     func registerUser(email: String, password: String, name: String, completion: @escaping (Bool, Error?) -> Void) {
-        guard let url = URL(string: "\(baseURL)/users/register") else { return } // Corrected endpoint
+        guard let url = URL(string: "\(baseURL)/users/register") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -27,7 +27,6 @@ class UsersModel {
                 completion(false, error)
                 return
             }
-            // Decoding response to ensure user creation was successful
             guard let data = data, let _ = try? JSONDecoder().decode(User.self, from: data) else {
                 completion(false, NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to decode response"]))
                 return
@@ -37,7 +36,7 @@ class UsersModel {
     }
     
     func loginUser(email: String, password: String, completion: @escaping (LoginResponse?, Error?) -> Void) {
-        guard let url = URL(string: "\(baseURL)/users/login") else { return } // Ensure this matches your actual login endpoint
+        guard let url = URL(string: "\(baseURL)/users/login") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

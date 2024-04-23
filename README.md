@@ -1,5 +1,7 @@
 ## Student ID : COBSCCOMP4Y222P-033
 
+![Vogue Vista Mobile App](https://github.com/smdthiranjaya/Vogue-Vista/assets/37227365/abec2f10-d8f0-4739-b421-886188848525)
+
 ### NodeJS Sever (Backend) GitHub Link:
 https://github.com/smdthiranjaya/Vogue-Vista-Server
 

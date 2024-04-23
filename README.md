@@ -1,3 +1,12 @@
+## Student ID : COBSCCOMP4Y222P-033
+
+### NodeJS Sever (Backend) GitHub Link:
+https://github.com/smdthiranjaya/Vogue-Vista-Server
+
+### Post Man API Public Collection Link:
+https://www.postman.com/spacecraft-cosmologist-43205865/workspace/public-ios-vogue-vista
+
+
 # Vogue Vista
 
 Vogue Vista is an iOS application designed for an online clothing brand. It allows users to browse, search, and purchase clothing items directly from their iOS devices. The app utilizes Auth0 for user authentication and Supabase for backend services.
